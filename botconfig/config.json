@@ -1,0 +1,61 @@
+{
+    "token": "ODcwNDcwNTg5MTEzMDY5NjE4.GQESGz.RikZ66vOlRQ4FnHLb3kZsM6LSuV7GYTVfTLyos",
+    "prefix": "-",
+    "ownerIDS": [
+        "760938184661008455"
+    ],
+    "fnbr": "43549683-4cdb-4eb5-8f1c-1b88dc82d910",
+    "fortnitetracker": "ac53a1db-3988-4cf5-888f-2518a1501abb",
+    "memer_api": "WNyBStXWCU4",
+    "status": {
+        "text": "🎈 | {prefix}help | En {guildcount} Servidores | Con {membercount} Miembros | Reproducidas {songsplayed} Canciones",
+        "text2": "🎉 | Se han usado {usedcommands} comandos | Tengo {commands} Comandos para ofrecer",
+        "type": "PLAYING",
+        "url": "https://twitch.tv/milratodiscordbot"
+    },
+    "clientsettings": {
+        "nodes": [
+            {
+                "host": "Lava-link-server.lospanasbotclan.repl.co",
+                "port": 443,
+                "secure": true,
+                "password": "Gamerpanas"
+            },
+            {
+                "host": "lavalink.oops.wtf",
+                "port": 443,
+                "secure": true,
+                "password": "www.freelavalink.ga"
+            },
+            {
+                "host": "Lavalink-servidor-2-CaletayoAhata-1.lospanasbotclan.repl.co",
+                "port": 443,
+                "secure": true,
+                "password": "CaletayoKey"
+            }
+        ]
+    },
+    "spotify": {
+        "clientSecret": "0522108b2cb24c708fefface0348455a",
+        "clientID": "ac536c48444b430c8e4d83ff6e5329c8"
+    },
+    "settings": {
+        "COMMENT": "time_delay 0 === insta leave",
+        "leaveOnEmpty_Channel": {
+            "enabled": true,
+            "time_delay": 30000
+        },
+        "LeaveOnEmpty_Queue": {
+            "enabled": true,
+            "time_delay": 30000
+        },
+        "selfDeaf": true
+    },
+    "lyricssettings": {
+        "lyrics_finder": true,
+        "ksoft_api": {
+            "use_this_instead": true,
+            "api_key": "DISABLED"
+        }
+    }
+}

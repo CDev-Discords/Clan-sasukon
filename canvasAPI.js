@@ -13,7 +13,7 @@ const apiSettings = {
     "734513783338434591"
   ],
   "ip" : "localhost",
-  "port": 500
+  "port": 4900
 };
 const { valid, port } = apiSettings;
 

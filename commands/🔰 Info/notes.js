@@ -22,7 +22,7 @@ module.exports = {
     var es = client.settings.get(message.guild.id, "embed");var ls = client.settings.get(message.guild.id, "language")
     try {
       
-      await dbEnsure(client.notes, message.author?.id, {notes: [
+      await client.notes.ensure(message.author?.id, {notes: [
           /*
            {
              title: "",

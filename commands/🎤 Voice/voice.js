@@ -46,8 +46,8 @@ module.exports = {
           .setFooter(client.getFooter(es))
         ]})
         
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
     
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
@@ -105,8 +105,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable6"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -161,8 +161,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable1"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
     
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
@@ -220,8 +220,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable6"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -278,8 +278,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable1"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
     
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
@@ -337,8 +337,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable6"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -393,8 +393,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable11"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -465,8 +465,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable23"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -562,8 +562,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable36"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -649,8 +649,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable47"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -717,8 +717,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable56"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -785,8 +785,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable65"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -853,8 +853,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable74"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -911,8 +911,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable81"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)
@@ -974,8 +974,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["voice"]["voice"]["variable88"]))
           .setFooter(client.getFooter(es))
         ]})
-        await dbEnsure(client.jointocreatemap, `tempvoicechannel_${message.guild.id}_${channel.id}`, false)
-        await dbEnsure(client.jointocreatemap, `owner_${message.guild.id}_${channel.id}`, false);
+        await client.jointocreatemap.ensure(`tempvoicechannel_${message.guild.id}_${channel.id}`, false)
+        await client.jointocreatemap.ensure(`owner_${message.guild.id}_${channel.id}`, false);
         if (await client.jointocreatemap.get(`tempvoicechannel_${message.guild.id}_${channel.id}`)) {
           var vc = channel
           let perms = vc.permissionOverwrites.cache.map(c => c)

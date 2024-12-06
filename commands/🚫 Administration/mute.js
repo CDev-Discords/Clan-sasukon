@@ -76,7 +76,7 @@ module.exports = {
           roleId: "",
           defaultTime: 60000,  
         };
-        await dbEnsure(client.settings, message.guild.id, mutesettings)
+        await client.settings.ensure(message.guild.id, mutesettings)
       } 
       /*
           mute: {

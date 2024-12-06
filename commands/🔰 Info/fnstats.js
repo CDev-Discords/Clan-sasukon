@@ -26,7 +26,7 @@ module.exports = {
       let Epic, platform;
       if(!usermention){
         if(!args[0] || !args[1]) {
-          await dbEnsure(client.epicgamesDB, message.author?.id, { 
+          await client.epicgamesDB.ensure(message.author?.id, { 
             epic: "",
             user: message.author?.id,
             guild: message.guild.id,
@@ -44,7 +44,7 @@ module.exports = {
           if (platform !== "pc" && platform !== "xbl" && platform !== "psn") return message.channel.send("Please enter a valid platform\n> Valid Platforms: `xbl, psn, pc`\n> Usage: `fnstats <platform> <Epic>`")
         }
       } else {
-        await dbEnsure(client.epicgamesDB, usermention.id, { 
+        await client.epicgamesDB.ensure(usermention.id, { 
           epic: "",
           user: usermention.id,
           guild: message.guild.id,

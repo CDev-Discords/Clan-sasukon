@@ -18,7 +18,7 @@ module.exports = {
     
     
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         defaulteq: false,
       })
       const d = await client.settings.get(`${message.guild.id}.defaulteq`);

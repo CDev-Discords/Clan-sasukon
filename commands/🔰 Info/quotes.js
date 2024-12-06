@@ -28,7 +28,7 @@ module.exports = {
         member = message.member;
       }
       var { user } = member;
-      await dbEnsure(client.afkDB, user.id, {
+      await client.afkDB.ensure(user.id, {
         quotes: [
           /*
           { by: "id", text: "", image: null, at: Date.now(), }

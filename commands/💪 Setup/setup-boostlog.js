@@ -20,7 +20,7 @@ module.exports = {
   type: "system",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         boost: {
           enabled: false,
           message: "",

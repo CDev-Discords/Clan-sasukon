@@ -15,7 +15,7 @@ module.exports = {
 async function run (client) {
     // Text Rank
 
-    await dbEnsure(client.points, "ranks", {
+    await client.points.ensure("ranks", {
         voicerank:{}    
     })
     
@@ -67,7 +67,7 @@ async function run (client) {
         //Grant Coints!
         if(connectedTime > 60000){
             if (newState.member.user?.bot || !newState.guild) return;
-            await dbEnsure(client.setups, newState.guild.id,  {
+            await client.setups.ensure(newState.guild.id,  {
                 ranking: {
                     enabled: true,
                     backgroundimage: "null",
@@ -76,7 +76,7 @@ async function run (client) {
             let ranking = await client.setups.get(`${newState.guild.id}.ranking`);
             if(!ranking ||!ranking.enabled) return 
             const key = `${newState.guild.id}_${newState.id}`;
-            await dbEnsure(client.points, key, {
+            await client.points.ensure(key, {
                 user: newState.id,
                 usertag: newState.member?.user?.tag,
                 xpcounter: 1,
@@ -166,7 +166,7 @@ async function messageCreate(client, message, guild_settings, setups) {
         if (!message.author || message.author?.bot || !message.guild || !message.guild.id) return;
         
         if(!setups || !setups.ranking) {
-            await dbEnsure(client.setups, message.guild.id,  {
+            await client.setups.ensure(message.guild.id,  {
                 ranking: {
                     enabled: true,
                     backgroundimage: "null",
@@ -197,7 +197,7 @@ async function messageCreate(client, message, guild_settings, setups) {
         async function databasing(rankuser) {
             return new Promise(async (res) => {
                 try{
-                    await dbEnsure(client.points, rankuser ? `${message.guild.id}_${rankuser.id}` : `${message.guild.id}_${message.author?.id}`, {
+                    await client.points.ensure(rankuser ? `${message.guild.id}_${rankuser.id}` : `${message.guild.id}_${message.author?.id}`, {
                         user: rankuser ? rankuser.id : message.author?.id,
                         usertag: rankuser ? rankuser.tag : message.author.tag,
                         xpcounter: 1,
@@ -212,8 +212,8 @@ async function messageCreate(client, message, guild_settings, setups) {
                         oldmessage: "",
                     });
                     await client.points.set(rankuser ? `${message.guild.id}_${rankuser.id}.usertag` : `${message.guild.id}_${message.author?.id}.usertag`, rankuser ? rankuser.tag : message.author.tag);
-                    await dbEnsure(client.points, message.guild.id, {setglobalxpcounter: 1}); 
-                    await dbEnsure(client.points, message.guild.id, {
+                    await client.points.ensure(message.guild.id, {setglobalxpcounter: 1}); 
+                    await client.points.ensure(message.guild.id, {
                         channel: false,
                         disabled: false
                     })
@@ -447,7 +447,7 @@ async function messageCreate(client, message, guild_settings, setups) {
             const newneededPoints = filtered?.find(d => d.ID == `${thekey ? thekey : key}`)?.data.neededpoints || await client.points.get(`${thekey ? thekey : key}.neededpoints`);
             //send ping and embed message
             try {
-                const res = await dbEnsure(client.points, message.guild.id, {
+                const res = await client.points.ensure(message.guild.id, {
                     rankroles: { }
                 })
                 let RankRoles = res && res.changed ? {} : filtered?.find(d => d.ID == `${message.guild.id}`)?.data?.rankroles || await client.points.get(`${message.guild.id}.rankroles`);

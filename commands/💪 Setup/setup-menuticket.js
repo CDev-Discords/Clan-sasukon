@@ -37,7 +37,6 @@ module.exports = {
           menuoptions.push({
             value: `${i}. Menu Ticket`,
             description: `Manage/Edit the ${i}. Menu Ticket Setup`,
-            emoji: NumberEmojiIds[i]
           })
         }
         
@@ -153,7 +152,7 @@ module.exports = {
       }
       async function second_layer(SetupNumber) {
         //setup-menuticket
-        await dbEnsure(theDB, `${message.guild.id}.${pre}`, {
+        await theDB.ensure(`${message.guild.id}.${pre}`, {
           messageId: "",
           channelId: "",
           claim: {

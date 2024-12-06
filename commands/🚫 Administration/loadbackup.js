@@ -51,7 +51,7 @@ module.exports = {
                 .setTitle(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable1"]))
                 .setDescription(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable2"]))
             ]});
-        await dbEnsure(client.backupDB, server.id, {
+        await client.backupDB.ensure(server.id, {
             backups: [ ]
         })
         let backups = await client.backupDB.get(server.id+".backups")

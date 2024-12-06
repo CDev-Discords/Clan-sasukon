@@ -43,7 +43,7 @@ module.exports = {
       ]});
     if(user.bot || topay.bot) return message.reply({content : eval(client.la[ls]["cmds"]["owner"]["removemoney"]["variable7"])})
 
-    await dbEnsure(client.economy, `${message.guild.id}-${user.id}`, {
+    await client.economy.ensure(`${message.guild.id}-${user.id}`, {
       user: user.id,
       work: 0,
       balance: 0,
@@ -61,7 +61,7 @@ module.exports = {
       }
     })
     
-    await dbEnsure(client.economy, `${message.guild.id}-${topay.id}`, {
+    await client.economy.ensure(`${message.guild.id}-${topay.id}`, {
       user: user.id,
       work: 0,
       balance: 0,

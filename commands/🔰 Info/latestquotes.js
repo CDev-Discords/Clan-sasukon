@@ -26,7 +26,7 @@ module.exports = {
       if(user.id != message.author?.id) {
         args.shift();
       }
-      await dbEnsure(client.afkDB, user.id, {
+      await client.afkDB.ensure(user.id, {
         quotes: [
           /*
           { by: "id", text: "", image: null, at: Date.now(), }

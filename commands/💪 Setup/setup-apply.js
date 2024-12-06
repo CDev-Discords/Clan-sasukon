@@ -45,7 +45,6 @@ module.exports = {
           menuoptions.push({
             value: `${i} Apply System`,
             description: `Manage/Edit the ${i} Apply Setup`,
-            emoji: NumberEmojiIds[i]
           })
         }
         //define the selection
@@ -176,7 +175,7 @@ module.exports = {
     async function second_layer(SetupNumber, menuoptiondata) {
       try {
         //ensure the database
-        await dbEnsure(apply_for_here, message.guild.id, getApplyEnsureData())
+        await apply_for_here.ensure(message.guild.id, getApplyEnsureData())
 
         console.log("APPLY DB NUMBER: ".green, pre);
         let menuoptions = [{

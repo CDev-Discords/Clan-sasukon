@@ -27,7 +27,7 @@ module.exports = {
       ///////////////////////////////////////
       let tempmsg;
       if (!GuildSettings.antidiscordscam) {
-        await dbEnsure(client.settings, message.guild.id, {
+        await client.settings.ensure(message.guild.id, {
             antidiscordscam: {
                 enabled: true,
                 action: "kick", // "mute" / "ban"

@@ -92,7 +92,7 @@ module.exports = {
       }
 
       async function handle_the_picks(optionhandletype, SetupNumber, menuoptiondata) {
-        await dbEnsure(client.epicgamesDB, message.guild.id, { 
+        await client.epicgamesDB.ensure(message.guild.id, { 
             logChannel: "",
             verifychannel: "",
         });

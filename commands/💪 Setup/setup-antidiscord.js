@@ -38,7 +38,7 @@ module.exports = {
           {
             value: `${GuildSettings?.antidiscord?.enabled ? "Disable" : "Enable"} Anti Discord`,
             description: `${GuildSettings?.antidiscord?.enabled ? "Don't delete other Discord Links" : "Delete other Discord Links"}`,
-            emoji: `${GuildSettings?.antidiscord?.enabled ? "833101993668771842" : "833101995723194437"}`
+            emoji: `${GuildSettings?.antidiscord?.enabled ? "👍" : "❌"}`
           },
           {
             value: "Settings",
@@ -73,7 +73,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Ticket-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         let Selection = new MessageSelectMenu()
@@ -129,7 +129,7 @@ module.exports = {
             let previous = GuildSettings?.antidiscord?.enabled || false;
             await client.settings.set(`${message.guild.id}.antidiscord.enabled`, !previous)
             return message.reply({embeds: [new Discord.MessageEmbed()
-              .setTitle(`<a:yes:833101995723194437> The Anti Discord Setup is now ${d2p(!previous)}!`)
+              .setTitle(`👍 The Anti Discord Setup is now ${d2p(!previous)}!`)
               .setColor(es.color)
               .setFooter(client.getFooter(es))
             ]});

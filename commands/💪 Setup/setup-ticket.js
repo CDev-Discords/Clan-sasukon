@@ -36,7 +36,6 @@ module.exports = {
           menuoptions.push({
             value: `${i} Ticket System`,
             description: `Manage/Edit the ${i} Ticket Setup`,
-            emoji: NumberEmojiIds[i]
           })
         }
         

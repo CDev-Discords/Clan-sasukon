@@ -21,7 +21,7 @@ module.exports = {
     
     
     try {
-      await dbEnsure(client.epicgamesDB, message.guild.id, { 
+      await client.epicgamesDB.ensure(message.guild.id, { 
         logChannel: "",
         verifychannel: "",
       });
@@ -42,7 +42,7 @@ module.exports = {
         return message.reply({content: String('```' + e.message ? String(e.message).substring(0, 1900) : String(e) + '```')})
       }
       if(!user) user = message.author;
-      await dbEnsure(client.epicgamesDB, user.id, { 
+      await client.epicgamesDB.ensure(user.id, { 
         epic: "",
         user: user.id,
         guild: message.guild.id,

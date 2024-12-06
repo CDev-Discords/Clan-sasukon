@@ -34,7 +34,7 @@ module.exports = {
               ghost_ping_detector: false,
           }
         };
-        await dbEnsure(client.settings, message.guild.id, defaultSettings);
+        await client.settings.ensure(message.guild.id, defaultSettings);
         GuildSettings.autowarn = defaultSettings;
       }
       first_layer()

@@ -37,7 +37,6 @@ module.exports = {
           menuoptions.push({
             value: `${i}. Auto Support`,
             description: `Manage/Edit the ${i}. Auto Support Setup`,
-            emoji: NumberEmojiIds[i]
           })
         }
         
@@ -168,7 +167,7 @@ module.exports = {
             */
           ]
         }
-        await dbEnsure(theDB, message.guild.id, obj);
+        await theDB.ensure(message.guild.id, obj);
         let menuoptions = [{
             value: "Send the Config	Message",
             description: `(Re) Send the auto-responding Support Message (with MENU)`,

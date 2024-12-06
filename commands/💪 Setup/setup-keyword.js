@@ -26,7 +26,7 @@ module.exports = {
       var originalowner = message.author?.id;
       let timeouterror;
       let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
-      await dbEnsure(client.keyword, message.guild.id, {
+      await client.keyword.ensure(message.guild.id, {
         commands: [
           /*
             {

@@ -119,19 +119,7 @@ exec('npx node canvasAPI.js',
         }
     });
 
-  setTimeout(function(){
-    require('child_process').exec(
-    'bash start.sh',
-    {stdio: 'inherit'},
-    console.log(chalk.hex('#C5FF00').bold(`
-====================================================
-⇈
-⇈  Iniciando Lavalink...
-⇈
-====================================================
-`)),
-);
-}, 1);
+
 
 const RemoteSqlite = fs.readdirSync(join(__dirname, 'RemoteCacheDatabases')).filter(file => file.endsWith('.js'));
 for (const file of RemoteSqlite) {
@@ -143,4 +131,35 @@ for (const file of RemoteSqlite) {
     By: Caletaponsio /-/   
 ║                                                     ║
 ╚═════════════════════════════════════════════════════╝`));
+}
+
+
+//Ejecución de un lavalink local (Sólo para máquinas potentes)
+
+//Asegúrate de tener pm2 instalado en tu máquina
+var lavalink = true
+
+if (lavalink === false) {
+    console.log("El Lavalink se ha desactivado".red)
+    return
+} else {
+
+console.log(`
+====================================================
+⇈
+⇈  Iniciando Lavalink...
+⇈
+====================================================
+    `.yellow)
+
+var exec = require('child_process').exec;
+
+exec('pm2 restart 0',
+    function (error, stdout, stderr) {
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        if (error !== null) {
+             console.log('exec error: ' + error);
+        }
+    });
 }

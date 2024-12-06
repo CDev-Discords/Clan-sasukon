@@ -22,7 +22,7 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
     
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         antiselfbot: {
             enabled: true,
             action: "mute", // mute, kick, ban

@@ -63,7 +63,7 @@ module.exports = (client, preindex) => {
       message: "Hey {user}, thanks for opening an ticket! Someone will help you soon!",
       adminroles: []
     }
-    await dbEnsure(client.setups, `${guild.id}`, obj, true);
+    await client.setups.ensure(`${guild.id}`, obj, true);
 
 
     let ticket = await guildData[systempath];

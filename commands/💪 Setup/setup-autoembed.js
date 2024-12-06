@@ -30,12 +30,10 @@ module.exports = {
         let menuoptions = [{
             value: "Add a Channel",
             description: `Add a auto sending Embed Setup Channel`,
-            emoji: NumberEmojiIds[1]
           },
           {
             value: "Remove a Channel",
             description: `Remove a Channel from the Setup`,
-            emoji: NumberEmojiIds[2]
           },
           {
             value: "Show all Channels",
@@ -45,7 +43,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Auto-Nsfw-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         //define the selection
@@ -123,7 +121,7 @@ module.exports = {
                       .setColor(es.color)
                       .setFooter(client.getFooter(es))
                     ]});
-                    await client.settings.push(message.guild.id+".autoembed", channel.id)
+                    await client.settings.set(message.guild.id+".autoembed", channel.id)
                     return message.reply({embeds: [new Discord.MessageEmbed()
                       .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-autoembed"]["variable9"]))
                       .setColor(es.color)
@@ -236,6 +234,7 @@ module.exports = {
     }
   },
 };
+
 function getNumberEmojis() {
   return [
     "<:Number_0:843943149915078696>",

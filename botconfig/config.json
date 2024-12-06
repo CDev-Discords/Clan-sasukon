@@ -1,5 +1,5 @@
 {
-    "token": "",
+    "token": "MTIzMTczODc4MDkzNjA0NDU3NQ.GV7ApR.ueF3LmO-YpveQ44-q9_UNMMQkwov_LHfPuvfYA",
     "prefix": "-",
     "ownerIDS": [
         "760938184661008455"
@@ -8,30 +8,18 @@
     "fortnitetracker": "ac53a1db-3988-4cf5-888f-2518a1501abb",
     "memer_api": "WNyBStXWCU4",
     "status": {
-        "text": "🎈 | {prefix}help | En {guildcount} Servidores | Con {membercount} Miembros | Reproducidas {songsplayed} Canciones",
-        "text2": "🎉 | Se han usado {usedcommands} comandos | Tengo {commands} Comandos para ofrecer",
+        "text": "🤖 | En labores de estabilización",
+        "text2": "🧐 | Fixing the database",
         "type": "PLAYING",
         "url": "https://twitch.tv/milratodiscordbot"
     },
     "clientsettings": {
         "nodes": [
             {
-                "host": "Lava-link-server.lospanasbotclan.repl.co",
-                "port": 443,
-                "secure": true,
-                "password": "Gamerpanas"
-            },
-            {
-                "host": "lavalink.oops.wtf",
-                "port": 443,
-                "secure": true,
-                "password": "www.freelavalink.ga"
-            },
-            {
-                "host": "Lavalink-servidor-2-CaletayoAhata-1.lospanasbotclan.repl.co",
-                "port": 443,
-                "secure": true,
-                "password": "CaletayoKey"
+                "host": "localhost",
+                "port": 8080,
+                "password": "password",
+                "version": "v3"
             }
         ]
     },

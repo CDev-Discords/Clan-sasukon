@@ -144,7 +144,7 @@ module.exports = async (client, message) => {
         }
       }
     } else {
-      await dbEnsure(client.commands, message.guild.id, {
+      await client.commands.ensure(message.guild.id, {
         commands: []
       })
     }

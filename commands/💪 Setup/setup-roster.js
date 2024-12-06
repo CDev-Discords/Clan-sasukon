@@ -42,7 +42,7 @@ module.exports = {
             inline: false,
           }
       }
-      await dbEnsure(client.roster, message.guild.id, obj);
+      await client.roster.ensure(message.guild.id, obj);
 
       let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
       first_layer()

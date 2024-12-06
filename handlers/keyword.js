@@ -18,7 +18,7 @@ module.exports = async (client) => {
         const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);       
         var cuc = await client.keyword.get(message.guild.id+".commands")
         if(!cuc && !Array.isArray(cuc)) {
-            await dbEnsure(client.keyword, message.guild.id, {
+            await client.keyword.ensure(message.guild.id, {
                 commands: []
             })
             cuc = [];

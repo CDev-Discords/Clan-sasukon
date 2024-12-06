@@ -23,7 +23,7 @@ module.exports = {
     
     
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         antinewaccount: {
           enabled: false,
           delay: ms("2 days"),
@@ -65,7 +65,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Anti-New-Account-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         //define the selection
@@ -199,7 +199,7 @@ module.exports = {
               {
                 value: "Cancel",
                 description: `Cancel and stop the Anti-New-Account-Setup!`,
-                emoji: "862306766338523166"
+                emoji: "❌"
               }
             ]
             //define the selection

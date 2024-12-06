@@ -3,7 +3,7 @@ const { remoteCacheServer } = require("remote-sqlite-database");
 const Server = new remoteCacheServer({
     username: "CaletaDB",
     password: "gamer0706",
-    name: "snipes",
+    name: "settings",
     dataDir: `${process.cwd()}/db files/settings`,
     port: 4050, // Any port
     tls: true,

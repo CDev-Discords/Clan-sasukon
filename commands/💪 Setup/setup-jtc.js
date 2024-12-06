@@ -28,7 +28,6 @@ module.exports = {
           menuoptions.push({
             value: `${i + 1} Join-To-Create System`,
             description: `Manage/Edit the ${i + 1} Join-to-Create Setup`,
-            emoji: NumberEmojiIds[i + 1]
           })
         }
         
@@ -104,7 +103,7 @@ module.exports = {
         //define the embed
         let MenuEmbed = new Discord.MessageEmbed()
         .setColor(es.color)
-        .setAuthor(client.getAuthor('Join-to-Create Setup', 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/joypixels/291/studio-microphone_1f399-fe0f.png', 'https://discord.gg/milrato'))
+        .setAuthor(client.getAuthor('Join-to-Create Setup', 'https://images-ext-1.discordapp.net/external/Xd0yT3UJvN6yR0Ivgj83m8-rcsWpzRjd_Z7TRSVwJKE/https/cdn.discordapp.com/icons/1233544365046104124/56430b6005db14d13ea4667b4db9ef48.webp?format=webp&width=192&height=192', 'https://discord.gg/milrato'))
         .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable2"]))
         //send the menu msg
         let menumsg = await message.reply({embeds: [MenuEmbed], components: [row1, row2, row3, row4]})
@@ -145,7 +144,7 @@ module.exports = {
           channelname: "{user}' Lounge",
           guild: message.guild.id,
         };
-        await dbEnsure(thedb, message.guild.id, Obj);
+        await thedb.ensure(message.guild.id, Obj);
         
         let menuoptions = [
           {
@@ -166,7 +165,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Ticket-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         //define the selection

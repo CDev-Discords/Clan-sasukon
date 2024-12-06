@@ -38,12 +38,12 @@ module.exports = {
           {
             value: `Enable & Set Anti Mention`,
             description: "Enable and limit the allowed Mentions / Message",
-            emoji: "833101995723194437"
+            emoji: "👍"
           },
           {
             value: `Disable Anti Mention`,
             description: "Don't prevent mass mentions",
-            emoji: "833101993668771842"
+            emoji: "❌"
           },
           {
             value: "Settings",
@@ -68,7 +68,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Anti-Mention-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "😒"
           }
         ]
         let Selection = new MessageSelectMenu()

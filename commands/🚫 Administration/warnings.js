@@ -45,7 +45,7 @@ module.exports = {
 
 
       try {
-        await dbEnsure(client.userProfiles, message.author?.id, {
+        await client.userProfiles.ensure(message.author?.id, {
           id: message.author?.id,
           guild: message.guild.id,
           totalActions: 0,

@@ -19,7 +19,7 @@ module.exports = {
     run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
       try{
         //I AM NOW MAKING A MUSIC REQUEST SYSTEM FOR A BOT!
-        await dbEnsure(client.musicsettings, message.guild.id, {
+        await client.musicsettings.ensure(message.guild.id, {
           "channel": "",
           "message": ""
         })

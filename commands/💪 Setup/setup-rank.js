@@ -197,7 +197,7 @@ module.exports = {
             }
           }break;
           case "Levelup Roles": {
-            await dbEnsure(client.points, message.guild.id, {
+            await client.points.ensure(message.guild.id, {
               rankroles: { }
             })
           var tempmsg = await message.reply({embeds: [new Discord.MessageEmbed()
@@ -271,7 +271,7 @@ module.exports = {
           }break;
           case "Show Settings": {
 
-            await dbEnsure(client.points, message.guild.id, {
+            await client.points.ensure(message.guild.id, {
               rankroles: {
                   
               }

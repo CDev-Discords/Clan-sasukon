@@ -36,7 +36,7 @@ module.exports = {
           return message.reply(":x: **Only Admins can add Quotes to other Users!**")
         }
       }
-      await dbEnsure(client.afkDB, user.id, {
+      await client.afkDB.ensure(user.id, {
         quotes: [
           /*
           { by: "id", text: "", image: null, at: Date.now(), }

@@ -25,7 +25,7 @@ const { dbEnsure } = require("../../handlers/functions");
       try {
         let TextEmojis = getNumberEmojis();
         let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
-        await dbEnsure(client.settings, message.guild.id, {
+        await client.settings.ensure(message.guild.id, {
           timedmessages: [
               /*
               {

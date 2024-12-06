@@ -51,7 +51,7 @@ module.exports = {
                 .setTitle(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable1"]))
                 .setDescription(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable2"]))
             ]});
-        await dbEnsure(client.backupDB, message.guild.id, {
+        await client.backupDB.ensure(message.guild.id, {
             backups: [ ]
         })
         message.channel.send({

@@ -1075,7 +1075,7 @@ module.exports = async (client) => {
                   */
                 ]
             }
-            await dbEnsure(theDB, message.guild.id, obj);
+            await theDB.ensure(message.guild.id, obj);
             let settings = await theDB.get(guild.id+"."+pre);
             if(message.id == settings.messageId && (channelId == settings.channelId || message.channelId == settings.channelId)){
                let index = settings.data.findIndex(v => v.value == values[0]);
@@ -1099,7 +1099,7 @@ module.exports = async (client) => {
                     message: "Hey {user}, thanks for opening an ticket! Someone will help you soon!",
                     adminroles: []
                 }
-                await dbEnsure(client.setups, guild.id,obj);
+                await client.setups.ensure(guild.id,obj);
                 let tickets = await client.setups.get("TICKETS."+ticketspath);
                 if (tickets && tickets.includes(user.id)) {
                     try {
@@ -1120,7 +1120,7 @@ module.exports = async (client) => {
                     }
                 }
               
-                await dbEnsure(client.stats, guild.id, {
+                await client.stats.ensure(guild.id, {
                     ticketamount: 0
                 });
                 await client.stats.add(guild.id+".ticketamount", 1);
@@ -1342,7 +1342,7 @@ module.exports = async (client) => {
                     */
                 ],
             }
-            await dbEnsure(theDB, guild.id, obj);
+            await theDB.ensure(guild.id, obj);
             let settings = await theDB.get(`${guild.id}.${pre}`);
             let es = await client.settings.get(`${guild.id}.embed`) || ee
             if(message.id == settings.messageId && (channelId == settings.channelId || message.channelId == settings.channelId)){
@@ -1405,7 +1405,7 @@ module.exports = async (client) => {
                     */
                 ],
             };
-            await dbEnsure(theDB, guild.id, obj);
+            await theDB.ensure(guild.id, obj);
             let guild_settings = await client.settings.get(guild.id)
             const es = guild_settings.embed || ee
             const ls = guild_settings.language || "en";

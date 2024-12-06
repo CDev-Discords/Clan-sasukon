@@ -37,7 +37,7 @@ module.exports = function (client, options) {
       ensureobject[`channel${i}`] = "no";
       ensureobject[`message${i}`] = "🗣 Members: {member}";
     }
-    await dbEnsure(client.setups, guildid+".membercount", ensureobject);
+    await client.setups.ensure(guildid+".membercount", ensureobject);
     //get the Guild
     var guild = client.guilds.cache.get(guildid)
     //if no guild, return

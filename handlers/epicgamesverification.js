@@ -16,14 +16,14 @@ module.exports = async client => {
         if(interaction.message.author?.id != client.user.id) return;
         if(!interaction.customId.includes("epicgamesverify")) return;
         let { user, guildId } = interaction;
-        await dbEnsure(client.epicgamesDB, user.id, { 
+        await client.epicgamesDB.ensure(user.id, { 
             epic: "",
             user: user.id,
             guild: guildId,
             Platform: "",
             InputMethod: "",
         });
-        await dbEnsure(client.epicgamesDB, guildId, { 
+        await client.epicgamesDB.ensure(guildId, { 
             logChannel: "",
             verifychannel: "",
         });

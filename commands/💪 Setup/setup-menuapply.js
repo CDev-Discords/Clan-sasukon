@@ -37,7 +37,6 @@ module.exports = {
           menuoptions.push({
             value: `${i}. Menu Apply`,
             description: `Manage/Edit the ${i}. Menu Apply Setup`,
-            emoji: NumberEmojiIds[i]
           })
         }
         
@@ -151,7 +150,7 @@ module.exports = {
         });
       }
       async function second_layer() {
-        await dbEnsure(theDB, `${message.guild.id}.${pre}`, {
+        await theDB.ensure(`${message.guild.id}.${pre}`, {
           messageId: "",
           channelId: "",
           data: [

@@ -112,14 +112,14 @@ module.exports = async (client, enableGiveaways = true, redisOptions = false) =>
             
             console.log(`[x] :: `.magenta + `LOADED THE DATABASE after: `.brightGreen + `${Date.now() - dateNow}ms\n       Database got a ${DbPing}ms ping`.green)
             
-            await dbEnsure(client.stats, "global", {
+            await client.stats.ensure("global", {
                 commands: 0,
                 songs: 0
             })
-            await dbEnsure(client.afkDB, "REMIND", {
+            await client.afkDB.ensure("REMIND", {
                 REMIND: []
             });
-            await dbEnsure(client.mutes, "MUTES", {
+            await client.mutes.ensure("MUTES", {
                 MUTES: []
             })
             let obj = {};
@@ -129,7 +129,7 @@ module.exports = async (client, enableGiveaways = true, redisOptions = false) =>
                 obj[`applytickets${i != 0 ? i : ""}`] = [];
             }
 
-            await dbEnsure(client.setups, "TICKETS", obj);
+            await client.setups.ensure("TICKETS", obj);
             if(enableGiveaways) manageGiveaways()
             res(true);
         });

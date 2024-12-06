@@ -21,7 +21,7 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
         
     try {//ensure the database
-      await dbEnsure(client.joinvc, message.guild.id, {
+      await client.joinvc.ensure(message.guild.id, {
         vcmessages: [
           /*
            {

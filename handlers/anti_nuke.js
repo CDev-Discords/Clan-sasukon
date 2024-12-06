@@ -9,7 +9,7 @@ module.exports = async (client) => {
 
 
     async function antinuke_databasing(GUILDID) {
-        await dbEnsure(client.Anti_Nuke_System, GUILDID, {
+        await client.Anti_Nuke_System.ensure(GUILDID, {
             all: {
                 enabled: false,
                 logger: "no",
@@ -228,7 +228,7 @@ module.exports = async (client) => {
     }
 
     async function usr_antinuke_databasing(GUILDIDUSERID) {
-        await dbEnsure(client.Anti_Nuke_System, GUILDIDUSERID, {
+        await client.Anti_Nuke_System.ensure(GUILDIDUSERID, {
             antibot: [], //ANTI INVITE BOT
             antideleteuser: [], // ANTI Kick & Ban
 

@@ -16,7 +16,7 @@ module.exports = {
     
     
     try {
-      await dbEnsure(client.settings, message.author?.id, {
+      await client.settings.ensure(message.author?.id, {
         dm: true
       })
       const d = await client.settings.get(`${message.author?.id}.dm`)

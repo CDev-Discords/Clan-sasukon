@@ -33,7 +33,7 @@ module.exports = {
       const menusettings = await client.settings.get(message.guild.id+".mute");
       first_layer()
       async function first_layer(){
-        await dbEnsure(client.settings, message.guild.id, {
+        await client.settings.ensure(message.guild.id, {
           style: "timeout",
           roleId: "",
           defaultTime: 60000, // in ms  

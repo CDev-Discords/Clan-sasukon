@@ -22,7 +22,7 @@ module.exports = {
         return message.reply({content: String('```' + e.message ? String(e.message).substring(0, 1900) : String(e) + '```')})
       }      
       // Fetch guild and member data from the db
-      await dbEnsure(client.invitesdb, message.guild.id + user.id, {
+      await client.invitesdb.ensure(message.guild.id + user.id, {
         /* REQUIRED */
         id: user.id, // Discord ID of the user
         guildId: message.guild.id,

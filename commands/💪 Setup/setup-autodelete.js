@@ -30,12 +30,10 @@ module.exports = {
         let menuoptions = [{
             value: "Add a Channel",
             description: `Add a auto delete Messages-Channel`,
-            emoji: NumberEmojiIds[1]
           },
           {
             value: "Remove a Channel",
             description: `Remove a Channel from the Setup`,
-            emoji: NumberEmojiIds[2]
           },
           {
             value: "Show all Channels",
@@ -91,7 +89,7 @@ module.exports = {
         });
       }
       async function handle_the_picks(optionhandletype, menuoptiondata) {
-        await dbEnsure(client.setups, message.guild.id, {
+        await client.setups.ensure(message.guild.id, {
           autodelete: [/*{ id: "840330596567089173", delay: 15000 }*/]
         })
         switch (optionhandletype){

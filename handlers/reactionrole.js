@@ -10,7 +10,7 @@ module.exports = (client) => {
             if (message && message.partial) await message.fetch().catch(() => null);
             if (reaction.partial) await reaction.fetch().catch(() => null);
             if (user.bot) return;
-            await dbEnsure(client.reactionrole, reaction.message.guild.id, {
+            await client.reactionrole.ensure(reaction.message.guild.id, {
                 reactionroles: []
             });
             const reactionsetup = await client.reactionrole.get(reaction.message.guild.id+".reactionroles");
@@ -138,7 +138,7 @@ module.exports = (client) => {
             if (reaction.partial) await reaction.fetch().catch(() => null);
             if (user.bot) return;
             if (!reaction.message.guild) return;
-            await dbEnsure(client.reactionrole, reaction.message.guild.id, {
+            await client.reactionrole.ensure(reaction.message.guild.id, {
                 reactionroles: []
             });
             const reactionsetup = await client.reactionrole.get(reaction.message.guild.id+".reactionroles");

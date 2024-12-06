@@ -36,7 +36,7 @@ module.exports = {
       }
       if(!user || user == null || user.id == null || !user.id) return message.reply(client.la[ls].common.usernotfound)
 
-      await dbEnsure(client.stats, message.guild.id + user.id, {
+      await client.stats.ensure(message.guild.id + user.id, {
         ban: [],
         kick: [],
         mute: [],

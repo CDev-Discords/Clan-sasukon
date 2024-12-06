@@ -441,7 +441,7 @@ module.exports = async (client) => {
   }
   async function EnsureInviteDB(guild, user) {
     
-    const res = await dbEnsure(client.invitesdb, guild.id + user.id, {
+    const res = await client.invitesdb.ensure(guild.id + user.id, {
       /* REQUIRED */
       id: user.id, // Discord ID of the user
       guildId: guild.id,

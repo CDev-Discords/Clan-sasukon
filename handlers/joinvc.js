@@ -12,7 +12,7 @@ module.exports = async (client) => {
     if(!newState.guild || (newState.member && newState.member.user.bot)) return;
     
     //ensure the database
-    await dbEnsure(client.joinvc, newState.guild.id, {
+    await client.joinvc.ensure(newState.guild.id, {
       vcmessages: [
         /*
          {

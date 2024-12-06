@@ -48,7 +48,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Admin-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         //define the selection
@@ -268,7 +268,7 @@ module.exports = {
               *Enter one of those Commands!*`).setFooter(client.getFooter(es))
             ]})
             var thecmd;
-            await dbEnsure(client.settings, message.guild.id, {
+            await client.settings.ensure(message.guild.id, {
               cmdadminroles: {
                 removetimeout: [],
                 timeout: [],
@@ -358,7 +358,7 @@ module.exports = {
                   message: "YOU CANNOT USE THAT COMMAND, CAUSE IT DOES NOT NEED PERMISSIONS"
                 }
 
-                await dbEnsure(client.settings, `${message.guild.id}.cmdadminroles.${thecmd}`, [])
+                await client.settings.ensure(`${message.guild.id}.cmdadminroles.${thecmd}`, [])
 
                 if(["dm"].includes(thecmd.toLowerCase())) return timeouterror = {
                   message: "YOU CANNOT USE THAT COMMAND, CAUSE IT IS ADMINISTRATOR ONLY"
@@ -385,7 +385,7 @@ module.exports = {
                     {
                       value: "Cancel",
                       description: `Cancel and stop the Admin-Per-Command-Setup!`,
-                      emoji: "862306766338523166"
+                      emoji: "❌"
                     }
                   ]
                   //define the selection

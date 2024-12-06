@@ -17,7 +17,7 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
     
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         defaultap: true,
       });
       const d = await client.settings.get(`${message.guild.id}.defaultap`);

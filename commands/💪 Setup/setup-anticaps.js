@@ -38,12 +38,12 @@ module.exports = {
           {
             value: `Enable & Set Anti Caps %`,
             description: "Enable to set an allowed % for CAPS in a Msg",
-            emoji: "833101995723194437"
+            emoji: "😀"
           },
           {
-            value: `Disable Anti Spam`,
+            value: `Disable Anti caps`,
             description: "Don't delete Messages with CAPS",
-            emoji: "833101993668771842"
+            emoji: "❌"
           },
           {
             value: "Settings",
@@ -68,7 +68,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Anti-Caps-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "😒"
           }
         ]
         let Selection = new MessageSelectMenu()
@@ -188,7 +188,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-anticaps"]["variable12"]))
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "<a:yes:833101995723194437>" : "<:no:833101993668771842>"}\n\n**Percentage, of Message allowed to be in caps:** \`${thesettings.percent} %\``.substring(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "👍" : "❌"}\n\n**Percentage, of Message allowed to be in caps:** \`${thesettings.percent} %\``.substring(0, 2048))
               .setFooter(client.getFooter(es))]}
             );
           }

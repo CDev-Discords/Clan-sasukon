@@ -24,7 +24,7 @@ module.exports = {
     if(!user) user = member.user;
     try{
       // Fetch guild and member data from the db
-      await dbEnsure(client.invitesdb, message.guild.id + user.id, {
+      await client.invitesdb.ensure(message.guild.id + user.id, {
         /* REQUIRED */
         id: user.id, // Discord ID of the user
         guildId: message.guild.id,

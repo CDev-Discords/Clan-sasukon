@@ -7,7 +7,7 @@ module.exports = async client => {
         if(!message.guild || message.guild.available === false) return;
         let data = guild_settings
         if(!data.ghost_ping_detector_max_time) {
-            await dbEnsure(client.settings, message.guild.id, {
+            await client.settings.ensure(message.guild.id, {
                 ghost_ping_detector: false,
                 ghost_ping_detector_max_time: 10000,
             })
@@ -34,7 +34,7 @@ module.exports = async client => {
         //if one of the settings isn't available, ensure and re-get it!
         if (!data || !data.warnsettings || !data.embed || !data.language || !data.adminroles || !data.ghost_ping_detector_max_time || !data.ghost_ping_detector || !data.autowarn) {
             if (!data || !data.autowarn) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     autowarn: {
                         antispam: false,
                         antiselfbot: false,
@@ -48,7 +48,7 @@ module.exports = async client => {
                 })
             }
             if (!data || !data.warnsettings) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     warnsettings: {
                         ban: false,
                         kick: false,
@@ -61,22 +61,22 @@ module.exports = async client => {
                 })
             }
             if (!data || !data.adminroles) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     adminroles: [],
                 });
             }
             if (!data || !data.language) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     language: "en"
                 });
             }
             if (!data || !data.embed) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     embed: ee
                 });
             }
             if (!data || !data.ghost_ping_detector_max_time || !data.ghost_ping_detector) {
-                await dbEnsure(client.settings, message.guild.id, {
+                await client.settings.ensure(message.guild.id, {
                     ghost_ping_detector: false,
                     ghost_ping_detector_max_time: 10000,
                 });
@@ -99,7 +99,7 @@ module.exports = async client => {
         if(data.ghost_ping_detector && messageIds.has(message.id) && Date.now() - messageIds.get(message.id) <= data.ghost_ping_detector_max_time){
            
             if(autowarn.ghost_ping_detector){
-                await dbEnsure(client.userProfiles, message.author?.id, {
+                await client.userProfiles.ensure(message.author?.id, {
                     id: message.author?.id,
                     guild: message.guild.id,
                     totalActions: 0,

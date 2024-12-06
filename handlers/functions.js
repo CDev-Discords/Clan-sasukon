@@ -2557,6 +2557,7 @@ async function create_transcript(message, client, msglimit) {
  * @INFO
  */
 //usage: await dbEnsure(QuickMongoDatabase, "key", { foo: "bar", data: ...Data });
+//Esta función en obsoleta para este caso, por favor visita el github del proyecto para más información
 
 
 async function dbEnsure(db, key, data, debug = true) {

@@ -26,7 +26,7 @@ module.exports = async (client) => {
             //if one of the settings isn't available, ensure and re-get it!
             if (!theSettings || !theSettings.warnsettings || !theSettings.embed || !theSettings.language || !theSettings.adminroles || !theSettings.anticaps || !theSettings.autowarn) {
                 if (!theSettings || !theSettings.autowarn) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         autowarn: {
                             antispam: false,
                             antiselfbot: false,
@@ -40,7 +40,7 @@ module.exports = async (client) => {
                     })
                 }
                 if (!theSettings || !theSettings.warnsettings) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         warnsettings: {
                             ban: false,
                             kick: false,
@@ -53,22 +53,22 @@ module.exports = async (client) => {
                     })
                 }
                 if (!theSettings || !theSettings.adminroles) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         adminroles: [],
                     });
                 }
                 if (!theSettings || !theSettings.language) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         language: "en"
                     });
                 }
                 if (!theSettings || !theSettings.embed) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         embed: ee
                     });
                 }
                 if (!theSettings || !theSettings.anticaps) {
-                    await dbEnsure(client.settings, message.guild.id, {
+                    await client.settings.ensure(message.guild.id, {
                         anticaps: {
                             enabled: true,
                             whitelistedchannels: [],
@@ -102,7 +102,7 @@ module.exports = async (client) => {
                 var percent = Math.ceil(uppercaselength / wholelength * 100);
                 if (percent >= anticaps.percent) {
                     if (autowarn.anticaps) {
-                        await dbEnsure(client.userProfiles, message.author?.id, {
+                        await client.userProfiles.ensure(message.author?.id, {
                             id: message.author?.id,
                             guild: message.guild.id,
                             totalActions: 0,

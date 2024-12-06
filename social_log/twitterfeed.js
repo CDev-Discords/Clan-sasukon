@@ -81,7 +81,7 @@ async function create_twit(client){
               //get the settings from the guildid
               if(!guildid || guildid == null || guildid == undefined || guildid.length != 18) return //console.log(` [TWITER] :: NO VALID GUILD :: ${user}`.cyan)
               try{
-                await dbEnsure(client.social_log, guildid, {
+                await client.social_log.ensure(guildid, {
                 twitter: {
                   TWITTER_USER_ID: "",
                   TWITTER_USER_NAME_ONLY_THOSE: "",

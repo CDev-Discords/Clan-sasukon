@@ -18,7 +18,7 @@ module.exports = {
     
     
     try {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         playmsg: true
       })
       

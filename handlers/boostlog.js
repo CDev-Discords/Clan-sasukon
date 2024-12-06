@@ -4,7 +4,7 @@ module.exports = function (client, options) {
 
   client.on("guildMemberUpdate", async (oM, nM) => {
     
-    await dbEnsure(client.settings, nM.guild.id, {
+    await client.settings.ensure(nM.guild.id, {
       boost: {
         enabled: false,
         message: "",

@@ -25,7 +25,7 @@ module.exports = {
       ensureobject[`channel${i}`] = "no";
       ensureobject[`message${i}`] = "🗣 Members: {member}";
     }
-    await dbEnsure(client.setups, message.guild.id+".membercount", ensureobject);
+    await client.setups.ensure(message.guild.id+".membercount", ensureobject);
     try {
 
       let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])

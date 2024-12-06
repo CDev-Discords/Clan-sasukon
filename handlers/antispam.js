@@ -29,7 +29,7 @@ module.exports = async (client) => {
       //if one of the settings isn't available, ensure and re-get it!
       if (!theSettings || !theSettings.warnsettings || !theSettings.embed || !theSettings.language || !theSettings.adminroles || !theSettings.antispam || !theSettings.autowarn) {
         if (!theSettings || !theSettings.autowarn) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             autowarn: {
               antispam: false,
               antiselfbot: false,
@@ -43,7 +43,7 @@ module.exports = async (client) => {
           })
         }
         if (!theSettings || !theSettings.warnsettings) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             warnsettings: {
               ban: false,
               kick: false,
@@ -56,22 +56,22 @@ module.exports = async (client) => {
           })
         }
         if (!theSettings || !theSettings.adminroles) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             adminroles: [],
           });
         }
         if (!theSettings || !theSettings.language) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             language: "en"
           });
         }
         if (!theSettings || !theSettings.embed) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             embed: ee
           });
         }
         if (!theSettings || !theSettings.antispam) {
-          await dbEnsure(client.settings, message.guild.id, {
+          await client.settings.ensure(message.guild.id, {
             antispam: {
               enabled: true,
               whitelistedchannels: [],
@@ -114,7 +114,7 @@ module.exports = async (client) => {
           .length > messagelimit
         ) {
           if (autowarn.antispam) {
-            await dbEnsure(client.userProfiles, message.author?.id, {
+            await client.userProfiles.ensure(message.author?.id, {
               id: message.author?.id,
               guild: message.guild.id,
               totalActions: 0,

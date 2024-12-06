@@ -7,7 +7,7 @@ module.exports = async (client, options) => {
   async function Counter(client, message, guild_settings) {
     if (!message.guild || message.guild.available === false || message.author?.bot) return;
     if (!guild_settings.counter) {
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         counter: "no",
         counternum: 0,
         counterauthor: ""

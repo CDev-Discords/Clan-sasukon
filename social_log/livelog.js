@@ -38,7 +38,7 @@ module.exports = async client => {
 
 
  async function getStreams(guild){
-   await dbEnsure(client.social_log, guild.id, {
+   await client.social_log.ensure(guild.id, {
      twitch: {
        DiscordServerId: guild.id,
        channelId: ``,

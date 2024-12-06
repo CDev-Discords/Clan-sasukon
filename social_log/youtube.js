@@ -70,7 +70,7 @@ module.exports = async (client) => {
             try {
                 if (Data && Data.youtube && Data.youtube.channel) {
                     for await (const youtuber of Data.youtube.channel) {
-                        await dbEnsure(client.youtube_log, youtuber, {
+                        await client.youtube_log.ensure(youtuber, {
                             oldvid: "",
                             alrsent: [],
                             message: "**{videoAuthorName}** uploaded \`{videoTitle}\`!\n**Watch it:** {videoURL}"

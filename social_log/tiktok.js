@@ -33,7 +33,7 @@ module.exports = async (client) => {
                 return  //console.log(` [TIKTOK] | ${moment().format("ddd DD-MM-YYYY HH:mm:ss.SSSS")} | ${guild.name} :: Doesn't have TikTok Channels anymore!`.italic.brightMagenta);
             }
             for await (const tt of DBdata.tiktok.channels){
-                await dbEnsure(client.tiktok, tt, {
+                await client.tiktok.ensure(tt, {
                     oldvid: ``,
                     message: `**{videoAuthorName}** uploaded \`{videoTitle}\`!\n**Watch it:** {videoURL}`
                 })

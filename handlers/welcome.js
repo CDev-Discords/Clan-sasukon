@@ -94,7 +94,7 @@ module.exports = async (client) => {
     // If not in a guild or a bot got added return
     if (!mem.guild || mem.user.bot) return;
     // Make sure that it's in the db
-    await dbEnsure(client.settings, mem.guild.id, getDefaultWelcomeData()).catch(console.warn);
+    await client.settings.ensure(mem.guild.id, getDefaultWelcomeData()).catch(console.warn);
     // get the settings
     const theSettings = await client.settings.get(mem.guild.id);
     // if there are not settings, or no welcome settings return
@@ -883,7 +883,7 @@ module.exports = async (client) => {
    */
   client.on("guildMemberAdd", async member => {
     if(!member.guild || member.user.bot) return;
-    await dbEnsure(await client.settings, member.guild.id, {
+    await client.settings.ensure(member.guild.id, {
       antinewaccount: {
         enabled: false,
         delay: ms("2 days"),
@@ -934,7 +934,7 @@ module.exports = async (client) => {
    */
   client.on("guildMemberAdd", async member => {
     if(!member.guild || member.user.bot) return;
-    await dbEnsure(client.settings, member.guild.id, {
+    await client.settings.ensure(member.guild.id, {
       joinlist: {
         username_contain: [/*
           {
@@ -1058,7 +1058,7 @@ module.exports = async (client) => {
   client.on("messageCreate", async message => {
     if(message.guild && message.author?.id){
       if(!await client.invitesdb.get(message.guild.id + message.author?.id)) {
-        await dbEnsure(client.invitesdb, `${message.guild.id + message.author?.id}`, { messagesCount: 0 }).catch(console.warn);
+        await client.invitesdb.ensure(`${message.guild.id + message.author?.id}`, { messagesCount: 0 }).catch(console.warn);
       }
       await client.invitesdb.add(`${message.guild.id + message.author?.id}.messagesCount`, 1).catch(console.warn);
     }
@@ -1122,7 +1122,7 @@ module.exports = async (client) => {
   };
 
   async function EnsureInviteDB(guild, user) {
-    const res = await dbEnsure(client.invitesdb, guild.id + user.id, {
+    const res = await client.invitesdb.ensure(guild.id + user.id, {
       /* REQUIRED */
       id: user.id, // Discord ID of the user
       guildId: guild.id,

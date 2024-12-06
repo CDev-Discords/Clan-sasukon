@@ -99,7 +99,7 @@ module.exports = {
       if(!validtypes.includes(type)) return message.reply(`:x: **Please a VALID joinlist type!**\n> **Get Help:** \`${prefix}joinlist help\`\n> Usage: \`${prefix}joinlist <type> <action> <data>\`\nValid Types: ${validtypes.map(d => `\`${d}\``).join(", ")}\nValid Actions: ${validactions.map(d => `\`${d}\``).join(", ")}`);
       if(!validactions.includes(action)) return message.reply(`:x: **Please a VALID joinlist action!**\n> **Get Help:** \`${prefix}joinlist help\`\n> Usage: \`${prefix}joinlist <type> <action> <data>\`\nValid Types: ${validtypes.map(d => `\`${d}\``).join(", ")}\nValid Actions: ${validactions.map(d => `\`${d}\``).join(", ")}`);
 
-      await dbEnsure(client.settings, message.guild.id, {
+      await client.settings.ensure(message.guild.id, {
         joinlist: {
           username_contain: [/*
             {

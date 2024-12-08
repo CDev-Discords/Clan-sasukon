@@ -1,0 +1,77 @@
+lavalink:
+    plugins:
+        dependency: dev.lavalink.youtube:youtube-plugin:1.10.2
+        repository: https://maven.lavalink.dev/releases
+    server:
+        bufferDurationMs: 100
+        filters:
+            channelMix: true
+            distortion: true
+            equalizer: true
+            karaoke: true
+            lowPass: true
+            rotation: true
+            timescale: true
+            tremolo: true
+            vibrato: true
+            volume: true
+        frameBufferDurationMs: 2000
+        gc-warnings: true
+        nonAllocatingFrameBuffer: true
+        opusEncodingQuality: 8
+        password: cdev
+        playerUpdateInterval: 3
+        resamplingQuality: MEDIUM
+        soundcloudSearchEnabled: true
+        sources:
+            bandcamp: true
+            http: true
+            local: false
+            nico: true
+            soundcloud: true
+            twitch: true
+            vimeo: true
+            youtube: false
+        trackStuckThresholdMs: 5000
+        useSeekGhosting: true
+        youtubePlaylistLoadLimit: 3
+        youtubeSearchEnabled: true
+logging:
+    file:
+        path: ./logs/
+    level:
+        lavalink: WARN
+        root: WARN
+    logback:
+        rollingpolicy:
+            max-file-size: 500MB
+            max-history: 15
+    request:
+        enabled: false
+metrics:
+    prometheus:
+        enabled: false
+        endpoint: /metrics
+plugins:
+    allowDirectPlaylistIds: true
+    allowDirectVideoIds: true
+    allowSearch: true
+    clients:
+        - MUSIC
+        - ANDROID_VR
+        - WEB
+        - WEBEMBEDDED
+    enabled: true
+    youtube: null
+sentry:
+    dsn: ""
+    environment: ""
+server:
+    address: 0.0.0.0
+    http2:
+        enabled: false
+    port: 8080
+
+
+    Podrías usar esta configuración para tu nodo lavalink en el archivo application.yml.
+    Esta configuración es la recomendable para el uso de un lavalink local junto con tu bot

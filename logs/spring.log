@@ -1,0 +1,523 @@
+2024-12-08 03:14:13.564  INFO 124055 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-ed0502 with PID 124055 (/workspaces/Clan-sasukon/Lavalink.jar started by codespace in /workspaces/Clan-sasukon)
+2024-12-08 03:14:13.579  INFO 124055 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:14:15.593  INFO 124055 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.084 seconds (JVM running for 3.733)
+2024-12-08 03:14:15.611  INFO 124055 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/freyacodes/Lavalink/issues/295
+2024-12-08 03:14:15.866  INFO 124055 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.5
+	Build time:     06.03.2023 12:02:05 UTC
+	Branch          HEAD
+	Commit:         c00286d
+	Commit time:    06.03.2023 11:59:46 UTC
+	JVM:            16
+	Lavaplayer      1.4.0-original
+
+2024-12-08 03:14:15.906  INFO 124055 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:14:17.244  WARN 124055 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 03:14:17.271  INFO 124055 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2024-12-08 03:14:17.272  INFO 124055 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2024-12-08 03:14:17.427  WARN 124055 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 03:14:17.691  INFO 124055 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2024-12-08 03:14:18.401  INFO 124055 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2024-12-08 03:14:18.401  INFO 124055 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2024-12-08 03:14:18.406  INFO 124055 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2024-12-08 03:14:18.411  INFO 124055 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2024-12-08 03:14:18.895  INFO 124055 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2024-12-08 03:14:18.927  INFO 124055 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2024-12-08 03:14:18.948  INFO 124055 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2024-12-08 03:14:19.060  INFO 124055 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2024-12-08 03:14:19.174  INFO 124055 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2024-12-08 03:14:19.203  INFO 124055 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.569 seconds (JVM running for 7.343)
+2024-12-08 03:14:19.211  INFO 124055 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2024-12-08 03:14:44.577  INFO 124055 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-08 03:14:44.578  INFO 124055 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-08 03:14:44.579  INFO 124055 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-08 03:14:44.600  INFO 124055 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:58432
+2024-12-08 03:14:44.623  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /, client=127.0.0.1
+2024-12-08 03:14:44.997  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:14:58.385  INFO 124055 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:50834
+2024-12-08 03:14:58.386  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /, client=127.0.0.1
+2024-12-08 03:14:58.390  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:15:21.055  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"op":"volume","guildId":"1220543298167504936","volume":100}
+2024-12-08 03:15:21.055  WARN 124055 --- [XNIO-1 I/O-1] lavalink.server.io.WebSocketHandler      : Sending websocket commands to Lavalink has been deprecated and will be removed in API version 4. API version 3 will be removed in Lavalink 5. Please use the new REST endpoints instead.
+2024-12-08 03:15:21.061  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"1220543298167504936"}
+2024-12-08 03:15:21.154  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"b26920ddd378fd9afddae282db7c4fc0","op":"voiceUpdate","guildId":"1220543298167504936","event":{"token":"5ece20aab220ce87","guild_id":"1220543298167504936","endpoint":"us-central2150.discord.media:443"}}
+2024-12-08 03:15:21.463  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"b26920ddd378fd9afddae282db7c4fc0","op":"voiceUpdate","guildId":"1220543298167504936","event":{"token":"5ece20aab220ce87","guild_id":"1220543298167504936","endpoint":"us-central2150.discord.media:443"}}
+2024-12-08 03:15:25.247  INFO 124055 --- [XNIO-1 task-1] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Musicmix pop"
+2024-12-08 03:15:25.428 ERROR 124055 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:Musicmix pop
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:15:25.431 ERROR 124055 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:15:25.740  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /loadtracks?identifier=ytsearch%3AMusicmix%20pop, client=127.0.0.1
+2024-12-08 03:15:58.039  INFO 124055 --- [XNIO-1 task-1] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:deezer me voy"
+2024-12-08 03:15:58.187 ERROR 124055 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:deezer me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:15:58.190 ERROR 124055 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:15:58.192  INFO 124055 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /loadtracks?identifier=ytsearch%3Adeezer%20me%20voy, client=127.0.0.1
+2024-12-08 03:17:23.600  INFO 124055 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:50834 -- CloseStatus[code=1006, reason=]
+2024-12-08 03:17:23.601  INFO 124055 --- [XNIO-1 I/O-2] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2024-12-08 03:17:23.607  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:58432 -- CloseStatus[code=1006, reason=]
+2024-12-08 03:17:23.607  INFO 124055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2024-12-08 03:17:23.882  INFO 124055 --- [SpringApplicationShutdownHook] io.undertow                              : stopping server: Undertow - 2.2.16.Final
+2024-12-08 03:17:23.908  INFO 124055 --- [SpringApplicationShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-12-08 03:17:23.916  INFO 124055 --- [SpringApplicationShutdownHook] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring disabled.
+2024-12-08 03:17:32.769  INFO 125992 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-ed0502 with PID 125992 (/workspaces/Clan-sasukon/Lavalink.jar started by codespace in /workspaces/Clan-sasukon)
+2024-12-08 03:17:32.774  INFO 125992 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:17:34.387  INFO 125992 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.253 seconds (JVM running for 4.044)
+2024-12-08 03:17:34.393  INFO 125992 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/freyacodes/Lavalink/issues/295
+2024-12-08 03:17:34.496  INFO 125992 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.5
+	Build time:     06.03.2023 12:02:05 UTC
+	Branch          HEAD
+	Commit:         c00286d
+	Commit time:    06.03.2023 11:59:46 UTC
+	JVM:            16
+	Lavaplayer      1.4.0-original
+
+2024-12-08 03:17:34.510  INFO 125992 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:17:35.594  WARN 125992 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 03:17:35.614  INFO 125992 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2024-12-08 03:17:35.615  INFO 125992 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1089 ms
+2024-12-08 03:17:35.728  WARN 125992 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 03:17:36.046  INFO 125992 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2024-12-08 03:17:36.654  INFO 125992 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2024-12-08 03:17:36.654  INFO 125992 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2024-12-08 03:17:36.659  INFO 125992 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2024-12-08 03:17:36.664  INFO 125992 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2024-12-08 03:17:37.057  INFO 125992 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2024-12-08 03:17:37.069  INFO 125992 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2024-12-08 03:17:37.079  INFO 125992 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2024-12-08 03:17:37.163  INFO 125992 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2024-12-08 03:17:37.215  INFO 125992 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2024-12-08 03:17:37.223  INFO 125992 --- [main] lavalink.server.Launcher                 : Started Launcher in 2.816 seconds (JVM running for 6.88)
+2024-12-08 03:17:37.227  INFO 125992 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2024-12-08 03:18:02.784  INFO 125992 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-08 03:18:02.785  INFO 125992 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-08 03:18:02.788  INFO 125992 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-08 03:18:02.823  INFO 125992 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:56982
+2024-12-08 03:18:02.849  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 03:18:03.301  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:18:04.441  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 03:18:17.432  INFO 125992 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:45264
+2024-12-08 03:18:17.434  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 03:18:17.438  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:18:18.946  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 03:18:36.958  INFO 125992 --- [XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:me voy"
+2024-12-08 03:18:37.210  INFO 125992 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/787xkpqplhqxhczv/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 03:18:37.228  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/787xkpqplhqxhczv/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"volume":100}
+2024-12-08 03:18:37.249 ERROR 125992 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:18:37.251 ERROR 125992 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:44) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:242) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:231) ~[lavaplayer-1.4.0.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.4.0-original
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.5.0-1025-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:58) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:282) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:248) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:37) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:216) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:147) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:449) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:431) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:223) ~[lavaplayer-1.4.0.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:157) ~[lavaplayer-1.4.0.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.4.0.jar!/:na]
+	... 12 common frames omitted
+
+2024-12-08 03:18:37.738  INFO 125992 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/loadtracks?identifier=ytsearch%3Ame+voy&trace=true, client=127.0.0.1
+2024-12-08 03:18:37.946  INFO 125992 --- [XNIO-1 task-3] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/787xkpqplhqxhczv/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"voice":{"token":"5ece20aab220ce87","endpoint":"us-central2150.discord.media:443","sessionId":"1d7434faaff3d4e035fa05edc72c9902"}}
+2024-12-08 03:20:21.872  INFO 125992 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:45264 -- CloseStatus[code=1006, reason=]
+2024-12-08 03:20:21.872  INFO 125992 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2024-12-08 03:20:21.881  INFO 125992 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:56982 -- CloseStatus[code=1006, reason=]
+2024-12-08 03:20:21.883  INFO 125992 --- [XNIO-1 I/O-2] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2024-12-08 03:20:22.169  INFO 125992 --- [SpringApplicationShutdownHook] io.undertow                              : stopping server: Undertow - 2.2.16.Final
+2024-12-08 03:20:22.180  INFO 125992 --- [SpringApplicationShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-12-08 03:20:22.188  INFO 125992 --- [SpringApplicationShutdownHook] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring disabled.
+2024-12-08 03:20:32.348  INFO 127692 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-ed0502 with PID 127692 (/workspaces/Clan-sasukon/Lavalink.jar started by codespace in /workspaces/Clan-sasukon)
+2024-12-08 03:20:32.358  INFO 127692 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:20:33.865  INFO 127692 --- [main] lavalink.server.Launcher                 : Started Launcher in 2.316 seconds (JVM running for 2.962)
+2024-12-08 03:20:33.871  INFO 127692 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/lavalink-devs/Lavalink/issues/295
+2024-12-08 03:20:33.992  INFO 127692 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.13
+	Build time:     20.09.2024 19:49:35 UTC
+	Branch          HEAD
+	Commit:         3c6134d
+	Commit time:    20.09.2024 19:40:52 UTC
+	JVM:            16
+	Lavaplayer      1.5.6
+
+2024-12-08 03:20:34.002  INFO 127692 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 03:20:35.402  WARN 127692 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 03:20:35.427  INFO 127692 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2024-12-08 03:20:35.427  INFO 127692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1410 ms
+2024-12-08 03:20:35.716  INFO 127692 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2024-12-08 03:20:35.916  WARN 127692 --- [main] l.s.config.AudioPlayerConfiguration      : The default Youtube source is now deprecated and won't receive further updates.
+You should use the new Youtube source plugin instead.
+https://github.com/lavalink-devs/youtube-source#plugin.
+To disable this warning, set 'lavalink.server.sources.youtube' to false in your application.yml.
+2024-12-08 03:20:36.567  INFO 127692 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2024-12-08 03:20:36.569  INFO 127692 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2024-12-08 03:20:36.575  INFO 127692 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2024-12-08 03:20:36.591  INFO 127692 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2024-12-08 03:20:36.635  WARN 127692 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 03:20:36.934  INFO 127692 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2024-12-08 03:20:36.946  INFO 127692 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2024-12-08 03:20:36.956  INFO 127692 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2024-12-08 03:20:37.067  INFO 127692 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2024-12-08 03:20:37.119  INFO 127692 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2024-12-08 03:20:37.130  INFO 127692 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.247 seconds (JVM running for 6.227)
+2024-12-08 03:20:37.133  INFO 127692 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2024-12-08 03:21:01.006  INFO 127692 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-08 03:21:01.007  INFO 127692 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-08 03:21:01.008  INFO 127692 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-08 03:21:01.034  INFO 127692 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:58510
+2024-12-08 03:21:01.060  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 03:21:01.475  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:21:02.641  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 03:21:15.068  INFO 127692 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:57926
+2024-12-08 03:21:15.070  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 03:21:15.073  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 03:21:16.585  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 03:22:13.491  INFO 127692 --- [XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:me voy"
+2024-12-08 03:22:13.738  INFO 127692 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"volume":100}
+2024-12-08 03:22:13.748  INFO 127692 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 03:22:14.211  INFO 127692 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: me voy
+2024-12-08 03:22:14.239  INFO 127692 --- [XNIO-1 task-3] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"voice":{"token":"0a2f0fdde4f9c936","endpoint":"us-central2150.discord.media:443","sessionId":"a9a4e0045df497dfc2fe86c28578e879"}}
+2024-12-08 03:22:14.313  INFO 127692 --- [XNIO-1 task-3] lavalink.server.io.RequestLoggingFilter  : GET /v3/loadtracks?identifier=ytsearch%3Ame+voy&trace=true, client=127.0.0.1
+2024-12-08 03:22:14.349  INFO 127692 --- [XNIO-1 task-3] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"volume":30}
+2024-12-08 03:22:14.381  INFO 127692 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"guildId":"1220543298167504936","encodedTrack":"QAAAkAIAJ0p1bGlldGEgVmVuZWdhcyAtIE1lIFZveSAoVmlkZW8gU3RlcmVvKQAPSnVsaWV0YSBWZW5lZ2FzAAAAAAAC1pAAC3k4ckJDNkdDVWpnAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eThyQkM2R0NVamcAB3lvdXR1YmUAAAAAAAAAAA=="}
+2024-12-08 03:22:14.387  WARN 127692 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : YouTube auth tokens can't be retrieved because email and password is not set in YoutubeAudioSourceManager, age restricted videos will throw exceptions.
+2024-12-08 03:22:14.810 ERROR 127692 --- [lava-daemon-pool-playback-1-thread-1] .s.d.l.s.y.YoutubeSignatureCipherManager : Problematic YouTube player script /s/player/62ccfae7/player_ias.vflset/en_US/base.js detected (issue detected with script: no n function match). Dumped to /tmp/lavaplayer-yt-player-script15663003943816988458.js
+2024-12-08 03:22:14.815  INFO 127692 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : Updating YouTube visitor id (current is null).
+2024-12-08 03:22:14.896  INFO 127692 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : Updating YouTube visitor id succeeded, new one is CgtGaXNOem5DRi1LUSjmodS6BjIKCgJVUxIEGgAgSzoMCAEg44rVxOKcxKpn, next update will be after 600 seconds.
+2024-12-08 03:22:15.019  INFO 127692 --- [XNIO-1 task-3] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 03:22:15.022  INFO 127692 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/6xyidgxeyqbvpsh5/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 19:41:47.798  INFO 4345 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-ed0502 with PID 4345 (/workspaces/Clan-sasukon/Lavalink.jar started by codespace in /workspaces/Clan-sasukon)
+2024-12-08 19:41:47.805  INFO 4345 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 19:41:50.155  INFO 4345 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.358 seconds (JVM running for 4.23)
+2024-12-08 19:41:50.159  INFO 4345 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/lavalink-devs/Lavalink/issues/295
+2024-12-08 19:41:50.257  INFO 4345 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.13
+	Build time:     20.09.2024 19:49:35 UTC
+	Branch          HEAD
+	Commit:         3c6134d
+	Commit time:    20.09.2024 19:40:52 UTC
+	JVM:            16
+	Lavaplayer      1.5.6
+
+2024-12-08 19:41:50.268  INFO 4345 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 19:41:51.549  WARN 4345 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 19:41:51.576  INFO 4345 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2024-12-08 19:41:51.576  INFO 4345 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1294 ms
+2024-12-08 19:41:51.855  INFO 4345 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2024-12-08 19:41:52.138  WARN 4345 --- [main] l.s.config.AudioPlayerConfiguration      : The default Youtube source is now deprecated and won't receive further updates.
+You should use the new Youtube source plugin instead.
+https://github.com/lavalink-devs/youtube-source#plugin.
+To disable this warning, set 'lavalink.server.sources.youtube' to false in your application.yml.
+2024-12-08 19:41:52.843  INFO 4345 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2024-12-08 19:41:52.844  INFO 4345 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2024-12-08 19:41:52.849  INFO 4345 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2024-12-08 19:41:52.856  INFO 4345 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2024-12-08 19:41:52.927  WARN 4345 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 19:41:53.304  INFO 4345 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2024-12-08 19:41:53.323  INFO 4345 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2024-12-08 19:41:53.333  INFO 4345 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2024-12-08 19:41:53.450  INFO 4345 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2024-12-08 19:41:53.499  INFO 4345 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2024-12-08 19:41:53.506  INFO 4345 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.338 seconds (JVM running for 7.581)
+2024-12-08 19:41:53.511  INFO 4345 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2024-12-08 19:41:56.830  INFO 4345 --- [SpringApplicationShutdownHook] io.undertow                              : stopping server: Undertow - 2.2.16.Final
+2024-12-08 19:41:56.839  INFO 4345 --- [SpringApplicationShutdownHook] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring disabled.
+2024-12-08 19:42:10.935  INFO 4805 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-ed0502 with PID 4805 (/workspaces/Clan-sasukon/Lavalink.jar started by codespace in /workspaces/Clan-sasukon)
+2024-12-08 19:42:10.940  INFO 4805 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 19:42:12.799  INFO 4805 --- [main] lavalink.server.Launcher                 : Started Launcher in 2.996 seconds (JVM running for 4.219)
+2024-12-08 19:42:12.807  INFO 4805 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/lavalink-devs/Lavalink/issues/295
+2024-12-08 19:42:12.920  INFO 4805 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.13
+	Build time:     20.09.2024 19:49:35 UTC
+	Branch          HEAD
+	Commit:         3c6134d
+	Commit time:    20.09.2024 19:40:52 UTC
+	JVM:            16
+	Lavaplayer      1.5.6
+
+2024-12-08 19:42:12.930  INFO 4805 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2024-12-08 19:42:14.370  WARN 4805 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 19:42:14.400  INFO 4805 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2024-12-08 19:42:14.401  INFO 4805 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1458 ms
+2024-12-08 19:42:14.668  INFO 4805 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2024-12-08 19:42:14.866  WARN 4805 --- [main] l.s.config.AudioPlayerConfiguration      : The default Youtube source is now deprecated and won't receive further updates.
+You should use the new Youtube source plugin instead.
+https://github.com/lavalink-devs/youtube-source#plugin.
+To disable this warning, set 'lavalink.server.sources.youtube' to false in your application.yml.
+2024-12-08 19:42:15.527  INFO 4805 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2024-12-08 19:42:15.528  INFO 4805 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2024-12-08 19:42:15.534  INFO 4805 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2024-12-08 19:42:15.542  INFO 4805 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2024-12-08 19:42:15.585  WARN 4805 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 19:42:15.964  INFO 4805 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2024-12-08 19:42:15.980  INFO 4805 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2024-12-08 19:42:15.990  INFO 4805 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2024-12-08 19:42:16.094  INFO 4805 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2024-12-08 19:42:16.137  INFO 4805 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 8080 (http)
+2024-12-08 19:42:16.143  INFO 4805 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.328 seconds (JVM running for 7.563)
+2024-12-08 19:42:16.145  INFO 4805 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2024-12-08 19:42:42.855  INFO 4805 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-08 19:42:42.857  INFO 4805 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-08 19:42:42.860  INFO 4805 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-08 19:42:42.884  INFO 4805 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:36398
+2024-12-08 19:42:42.909  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 19:42:43.284  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 19:42:44.533  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 19:42:55.614  INFO 4805 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:43544
+2024-12-08 19:42:55.616  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/websocket, client=127.0.0.1
+2024-12-08 19:42:55.624  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2024-12-08 19:42:57.130  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /v3/info?trace=true, client=127.0.0.1
+2024-12-08 19:43:42.619  INFO 4805 --- [XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:me voy"
+2024-12-08 19:43:42.918  INFO 4805 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"volume":100}
+2024-12-08 19:43:42.920  INFO 4805 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 19:43:43.329  INFO 4805 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: me voy
+2024-12-08 19:43:43.418  INFO 4805 --- [XNIO-1 task-4] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"voice":{"token":"294e0f88cc6f8924","endpoint":"us-central394.discord.media:443","sessionId":"b84c44e06e57e494a8078e34982a2ec1"}}
+2024-12-08 19:43:43.423  INFO 4805 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : GET /v3/loadtracks?identifier=ytsearch%3Ame+voy&trace=true, client=127.0.0.1
+2024-12-08 19:43:43.469  INFO 4805 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"volume":30}
+2024-12-08 19:43:43.483  INFO 4805 --- [XNIO-1 task-4] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"guildId":"1220543298167504936","encodedTrack":"QAAAkAIAJ0p1bGlldGEgVmVuZWdhcyAtIE1lIFZveSAoVmlkZW8gU3RlcmVvKQAPSnVsaWV0YSBWZW5lZ2FzAAAAAAAC1pAAC3k4ckJDNkdDVWpnAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eThyQkM2R0NVamcAB3lvdXR1YmUAAAAAAAAAAA=="}
+2024-12-08 19:43:43.499  WARN 4805 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : YouTube auth tokens can't be retrieved because email and password is not set in YoutubeAudioSourceManager, age restricted videos will throw exceptions.
+2024-12-08 19:43:43.951 ERROR 4805 --- [lava-daemon-pool-playback-1-thread-1] .s.d.l.s.y.YoutubeSignatureCipherManager : Problematic YouTube player script /s/player/62ccfae7/player_ias.vflset/en_US/base.js detected (issue detected with script: no n function match). Dumped to /tmp/lavaplayer-yt-player-script16273819597768370765.js
+2024-12-08 19:43:43.960  INFO 4805 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : Updating YouTube visitor id (current is null).
+2024-12-08 19:43:44.053  INFO 4805 --- [lava-daemon-pool-playback-1-thread-1] c.s.d.l.s.y.YoutubeAccessTokenTracker    : Updating YouTube visitor id succeeded, new one is CgtBakpYd1liSGhDYyjw7de6BjIKCgJVUxIEGgAgXzoMCAEg9s64qoDe_apn, next update will be after 600 seconds.
+2024-12-08 19:43:44.205  INFO 4805 --- [XNIO-1 task-4] lavalink.server.io.RequestLoggingFilter  : DELETE /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1
+2024-12-08 19:43:44.213  INFO 4805 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 19:43:44.226  INFO 4805 --- [XNIO-1 task-4] lavalink.server.io.RequestLoggingFilter  : PATCH /v3/sessions/cs6e17qmuie588q6/players/1220543298167504936?trace=true, client=127.0.0.1, payload={"encodedTrack":null}
+2024-12-08 21:23:47.522  WARN 4176 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 21:23:50.287  WARN 4176 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2024-12-08 21:41:14.756  WARN 4771 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2024-12-08 21:41:15.981  WARN 4771 --- [main] l.server.config.SentryConfiguration      : Turning off sentry

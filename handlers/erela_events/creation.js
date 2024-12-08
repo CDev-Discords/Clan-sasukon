@@ -72,7 +72,9 @@ var {
           port: x.port && !isNaN(x.port) ? Number(x.port) : 2333,
           identifier: x.identifier || x.host,
           retryDelay: x.retryDelay ? Number(x.retryDelay) : 5000,
-          secure: x.secure ? x.secure : false
+          secure: x.secure ? x.secure : false,
+          version: x.version ? x.version : 'v4'
+
       };
     });
 }

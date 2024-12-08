@@ -7,19 +7,31 @@ plugins:
 #    another_key: another_value
 lavalink:
   plugins:
-#    - dependency: "group:artifact:version"
-#      repository: "repository"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:VERSION"
+      repository: "https://maven.lavalink.dev/releases"
+        youtube:
+    enabled: true # Whether this source can be used.
+    allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+    allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
+    allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+    # The clients to use for track loading. See below for a list of valid clients.
+    # Clients are queried in the order they are given (so the first client is queried first and so on...)
+    clients:
+      - MUSIC
+      - ANDROID_VR
+      - WEB
+      - WEBEMBEDDED 
   pluginsDir: "./plugins"
   server:
     password: "password"
     sources:
-      youtube: true
+      youtube: false
       bandcamp: true
       soundcloud: true
       twitch: true
       vimeo: true
-      http: true
-      local: false
+      http: false
+      local: true
     filters: # All filters are enabled by default
       volume: true
       equalizer: true

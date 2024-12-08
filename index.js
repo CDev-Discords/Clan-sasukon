@@ -154,7 +154,7 @@ console.log(`
 
 var exec = require('child_process').exec;
 
-exec('pm2 restart 0',
+exec('pm2 start ./lavalink-node/start.sh',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);

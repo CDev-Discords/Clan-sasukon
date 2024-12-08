@@ -18,8 +18,10 @@
             {
                 "host": "localhost",
                 "port": 8080,
-                "password": "password",
-                "version": "v3"
+                "password": "cdev",
+                "version": "v3",
+                "secure": false,
+                "comment": "You can use Lavalink v4 instead. Just change v3 to v4"
             }
         ]
     },

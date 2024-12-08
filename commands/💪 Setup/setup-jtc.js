@@ -18,6 +18,8 @@ module.exports = {
     run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
   
     var timeouterror;
+    message.reply("🧐 | Este comando tiene problemas desconocidos que no hemos podido arreglar, inténtalo de nuevo más tarde")
+    return
     try{
       let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
       first_layer()

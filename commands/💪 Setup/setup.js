@@ -47,7 +47,7 @@ module.exports = {
             {
               value: "setup-antidiscord",
               description: `Setup a Anit-DISCORD System to prevent DC-LINKS`,
-              emoji: "<:DiscordLogo:936723374644789370>"
+              emoji: "😶‍🌫️"
             },
             {
               value: "setup-antilink",
@@ -57,7 +57,7 @@ module.exports = {
             {
               value: "setup-antinuke",
               description: `Setup a Anit-NUKE System to prevent NUKES`,
-              emoji: "866089515993792522"
+              emoji: "💣"
             },
             {
               value: "setup-apply",
@@ -77,7 +77,7 @@ module.exports = {
             {
               value: "setup-automeme",
               description: `Define a Channel to post MEMES every Minute`,
-              emoji: "862749865460498524"
+              emoji: "✨"
             },
             {
               value: "setup-autonsfw",
@@ -187,22 +187,22 @@ module.exports = {
             {
               value: "setup-tiktok",
               description: `Setup up to 3 different TikTok Logger Channels`,
-              emoji: "840503976315060225"
+              emoji: "🔰"
             },
             {
               value: "setup-twitch",
               description: `Setup up to 5 different Twitch Logger Channels`,
-              emoji: "840260133753061408"
+              emoji: "🙌"
             },
             {
               value: "setup-twitter",
               description: `Setup up to 2 different Twitter Logger Channels`,
-              emoji: "840255600851812393"
+              emoji: "👍"
             },
             {
               value: "setup-validcode",
               description: `Setup the Valid-Code System`,
-              emoji: "858405056238714930"
+              emoji: "🔰"
             },
             {
               value: "setup-warn",

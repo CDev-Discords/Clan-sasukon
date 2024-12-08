@@ -2,14 +2,14 @@
     "token": "",
     "prefix": "-",
     "ownerIDS": [
-        "760938184661008455"
+        "1216183624718749746"
     ],
     "fnbr": "43549683-4cdb-4eb5-8f1c-1b88dc82d910",
     "fortnitetracker": "ac53a1db-3988-4cf5-888f-2518a1501abb",
     "memer_api": "WNyBStXWCU4",
     "status": {
         "text": "🤖 | En labores de estabilización",
-        "text2": "🧐 | Fixing the database",
+        "text2": "🧐 | Fixing the emojis in commands",
         "type": "PLAYING",
         "url": "https://twitch.tv/milratodiscordbot"
     },

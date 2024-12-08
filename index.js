@@ -12,13 +12,13 @@ const manager = new Manager("./bot.js", {
     token: config.token,    
     // shardList: [ 0, 1, 2, 3, 4, 5 ], // if only those shards on that host etc.
     totalShards: 4, // amount or: "auto"
-    totalClusters: 2,
+    shardsPerClusters: 2, // 2 shards per process
     mode: "process", // "process" or: "worker"
     respawn: true, 
     usev13: true
 });
 manager.on("clusterCreate", cluster => {
-    console.log(`[SHARDING-MANAGER]: `.magenta + `Se ha creado el clúster #${cluster.id+1} | ${cluster.id+1}/${cluster.manager.totalClusters} [${cluster.manager.shardsPerClusters}/${cluster.manager.totalShards} Shards]`.green)
+    console.log(`[SHARDING-MANAGER]: `.magenta + `Launched Cluster #${cluster.id} | ${cluster.id+1}/${cluster.manager.totalClusters} [${cluster.manager.shardsPerClusters}/${cluster.manager.totalShards} Shards]`.green)
 
     cluster.on("death", function () {
         console.log(`${colors.red.bold(`Cluster ${cluster.id+1} Muerto...`)}`);
@@ -110,7 +110,7 @@ app.listen(port, () => console.log(`
 
 var exec = require('child_process').exec;
 
-exec('npx node canvasAPI.js',
+exec('pm2 start node canvasAPI.js',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);

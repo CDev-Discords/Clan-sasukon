@@ -58,7 +58,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Anti-Self-Bot-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "❌"
           }
         ]
         //define the selection
@@ -154,7 +154,7 @@ module.exports = {
               {
                 value: "Cancel",
                 description: `Cancel and stop the Anti-Self-Bot-Setup!`,
-                emoji: "862306766338523166"
+                emoji: "❌"
               }
             ]
             //define the selection

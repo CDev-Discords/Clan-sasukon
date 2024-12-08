@@ -228,10 +228,10 @@ module.exports = {
             description: "Commands to show your Emotions with Anime style"
           },
           {
-            label: "Nsfw",
+            label: "Nsfw | Disabled by code",
             value: "Nsfw",
             emoji: "🔞",
-            description: "Commands for Nsfw (underage) Content."
+            description: "Esta categoría ha sido deshabilitada mediante código"
           },
           {
             label: "Customcommand",
@@ -282,8 +282,8 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
 :file_folder: on **${allGuilds} Guilds**
 ⌚️ **${duration(client.uptime).map(i=> `\`${i}\``).join("︲")} Uptime**
 📶 **\`${Math.floor(client.ws.ping)}ms\` Ping**
-<:online:862306785007632385> **\`${Math.floor(await client.database.ping())}ms\` DB-Ping**
-<:MilratoDevelopment:900389724936609842>  Made by [**Milrato Development**](https://discord.gg/milrato)`)
+✅ **\`${Math.floor(await client.database.ping())}ms\` DB-Ping**
+✨  Made by [**Milrato Development**](https://discord.gg/milrato)`)
 .addField("How to get help?", `>>> **\` 1. Way \`** *Use the Buttons, to swap the Pages*\n**\` 2. Way \`** *Use the Menu to select all Help Pages, you want to display*\n**\` 3. Way \`** *Watch the Youtube Tutorial*`)
 
         let err = false;
@@ -555,11 +555,11 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
 
           //NSFW COMMANDS
           var embed17 = new MessageEmbed()
-            .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "🔞 NSFW").size}\`] 🔞 NSFW Commands 🔞 | ${settings.NSFW ? "<a:yes:833101995723194437> ENABLED" : "<:no:833101993668771842> DISABLED"}`)
-            .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "🔞 NSFW").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
+            .setTitle(`[\`${client.commands.filter((cmd) => cmd.category === "Disabled by owner").size}\`] Disabled by Owner | ${settings.NSFW ? "<a:yes:833101995723194437> ENABLED" : "<:no:833101993668771842> DISABLED"}`)
+            .setDescription(`> *${client.commands.filter((cmd) => cmd.category === "Disabled by owner").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}*`)
             .addField("\u200b", "__**Sub-Categorized Commands:**__")
-            .addField("😳 **Animated (Hentai, Neko, SFW, ...)**", `> ${client.commands.filter((cmd) => cmd.category === "🔞 NSFW" && cmd.type === "anime").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
-            .addField("🔞 **Reallife (Porn, Erotik, etc.)**", `> ${client.commands.filter((cmd) => cmd.category === "🔞 NSFW" && cmd.type === "real").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
+            .addField("💣 **Disabled by code if you want this, you could upload the folder from the original sources ;)*", `> ${client.commands.filter((cmd) => cmd.category === "🔞 NSFW" && cmd.type === "anime").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
+            .addField("💣 **Disabled by code if you want this, you could upload the folder from the original sources ;)**", `> ${client.commands.filter((cmd) => cmd.category === "🔞 NSFW" && cmd.type === "real").sort((a,b) => a.name.localeCompare(b?.name)).map((cmd) => `\`${cmd.name}\``).join("︲")}`)
           if(!filterdisabled || settings.NSFW || settings.showdisabled) embeds.push(embed17)
 
           //CUSTOM COMMANDS EMBED

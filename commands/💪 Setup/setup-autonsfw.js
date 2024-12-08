@@ -20,8 +20,10 @@ module.exports = {
   type: "fun",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
     
+    message.reply("🧐 | Este comando ha sido deshabilitado con fines de respetar los lineamientos de discord")
+    return
+
     try {
-      
 
       first_layer()
       async function first_layer(){

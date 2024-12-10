@@ -20,7 +20,7 @@ module.exports = {
   type: "fun",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
   
-    return message.reply(`<a:Milrato_Animated:900394164829708388> **This got disabled, since it's currently not working!**`);
+    return message.reply(`**🧐 | Este comando tiene problemas desconocidos que no hemos podido arreglar, inténtalo de nuevo más tarde**`);
     try {
       var adminroles = GuildSettings.adminroles ? GuildSettings.adminroles : []
 

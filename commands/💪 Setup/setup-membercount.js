@@ -37,7 +37,6 @@ module.exports = {
           menuoptions.push({
             value: `${i} Member Counter`,
             description: `Manage/Edit the ${i}. Member Counter`,
-            emoji: NumberEmojiIds[i]
           })
         }
         //define the selection

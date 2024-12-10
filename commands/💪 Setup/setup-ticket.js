@@ -209,7 +209,7 @@ module.exports = {
         {
           value: "Cancel",
           description: `Cancel and stop the Ticket-Setup!`,
-          emoji: "862306766338523166"
+          emoji: "❌"
         }
         ]
         //define the selection
@@ -260,7 +260,7 @@ module.exports = {
             if (menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable3"]))
             menuselection(menu)
           } else menu?.reply({
-            content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+            content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`,
             ephemeral: true
           });
         });

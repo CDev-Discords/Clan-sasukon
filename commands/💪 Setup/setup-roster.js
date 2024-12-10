@@ -54,7 +54,6 @@ module.exports = {
           menuoptions.push({
             value: `${i} Roster System`,
             description: `Manage/Edit the ${i}. Server Roster System`,
-            emoji: NumberEmojiIds[i]
           })
         }
         

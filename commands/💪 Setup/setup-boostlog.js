@@ -25,9 +25,9 @@ module.exports = {
           enabled: false,
           message: "",
           log: false,
-          stopBoost: "<a:Server_Boosts:867777823468027924> {member} **stopped Boosting us..** <:Cat_Sad:867722685949804565>",
-          startBoost: "<a:Server_Boosts:867777823468027924> {member} **has boosted us!** <a:Light_Saber_Dancce:867721861462229013>",
-          againBoost: "<a:Server_Boosts:867777823468027924> {member} **has boosted us again!** <:Tada_WON:867724032207224833>",
+          stopBoost: "❌ {member} **stopped Boosting us..** <:Cat_Sad:867722685949804565>",
+          startBoost: "✨ {member} **has boosted us!** <a:Light_Saber_Dancce:867721861462229013>",
+          againBoost: "✅ {member} **has boosted us again!** <:Tada_WON:867724032207224833>",
         }
       })
 
@@ -47,22 +47,22 @@ module.exports = {
           {
             value: "Start Boost Message",
             description: `Define the Started Boosting Message`,
-            emoji: "867777823468027924"
+            emoji: "✨"
           },
           {
             value: "Stop Boost Message",
             description: `Define the Stopped Boosting Message`,
-            emoji: "867777823468027924"
+            emoji: "❌"
           },
           {
             value: "Again Boost Message",
             description: `Define the Again Boosting Message`,
-            emoji: "867777823468027924"
+            emoji: "✅"
           },
           {
             value: "Cancel",
-            description: `Cancel and stop the Ai-Chat-Setup!`,
-            emoji: "862306766338523166"
+            description: `Cancel and stop BoostLog-Setup!`,
+            emoji: "🙄"
           }
         ]
         //define the selection

@@ -71,7 +71,8 @@ discordModals(client); // discord-modals needs your client in order to interact 
  
   client.on('debug', (limit) => {
    if (limit.startsWith("Hit a 429")) {
-   console.log(`   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+   console.log(`
+     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
      ┃                                                                  ┃
      ┃ Matando bot por ratelimit...                                     ┃
      ┃                                                                  ┃

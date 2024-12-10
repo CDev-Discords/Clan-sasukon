@@ -29,7 +29,7 @@ module.exports = {
           {
             value: "Remove Channel",
             description: `Remove one of the added Twitch Channels`,
-            emoji: "840260133753061408"
+            emoji: "🔴"
           },
           {
             value: "New Channel",
@@ -39,12 +39,12 @@ module.exports = {
           {
             value: "Discord Channel",
             description: `Set a Discord Channel for Posting Messages`,
-            emoji: "895066899619119105"
+            emoji: "✨"
           },
           {
             value: "Active Live Role",
             description: `Set a Role to add for current live Streamers`,
-            emoji: "895066900105674822"
+            emoji: "🟢"
           },
           {
             value: "Ghost Ping Role",
@@ -59,7 +59,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Twitch-Logger-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "🧐"
           }
         ]
         //define the selection

@@ -39,7 +39,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Report-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "🙄"
           }
         ]
         //define the selection

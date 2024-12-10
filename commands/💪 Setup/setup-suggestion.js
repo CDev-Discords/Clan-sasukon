@@ -93,7 +93,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Suggestion System!`,
-            emoji: "862306766338523166"
+            emoji: "🙄"
           }
         ]
         //define the selection

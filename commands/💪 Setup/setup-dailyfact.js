@@ -43,7 +43,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Admin-Command-Log-Setup!`,
-            emoji: "❌"
+            emoji: "🙄"
           }
         ]
         //define the selection

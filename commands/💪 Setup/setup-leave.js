@@ -35,7 +35,7 @@ module.exports = {
           {
             value: "Channel Leave Messages",
             description: `Manage Leave Messages in 1 CHANNEL`,
-            emoji: "895066899619119105"
+            emoji: "🙌"
           },
           {
             value: "Direct Leave Messages",
@@ -45,7 +45,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Leave-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "🙄"
           }
         ]
         //define the selection
@@ -105,7 +105,7 @@ module.exports = {
                 {
                   value: `${GuildSettings.leave.channel == "nochannel" ? "Set Channel": "Overwrite Channel"}`,
                   description: `${GuildSettings.leave.channel == "nochannel" ? "Set a Channel where the Leave Messages should be": "Overwrite the current Channel with a new one"}`,
-                  emoji: "895066899619119105" //
+                  emoji: "🙌" //
                 },
                 {
                   value: "Disable Leave",
@@ -120,17 +120,17 @@ module.exports = {
                 {
                   value: "Edit the Message",
                   description: `Edit the Leave Message ...`,
-                  emoji: "877653386747605032"
+                  emoji: "✨"
                 },
                 {
                   value: `${GuildSettings.leave.invite ? "Disable InviteInformation": "Enable Invite Information"}`,
                   description: `${GuildSettings.leave.invite ? "No longer show Information who invited him/her": "Show Information about who invited him/her"}`,
-                  emoji: "877653386747605032"
+                  emoji: "❌"
                 },
                 {
                   value: "Cancel",
                   description: `Cancel and stop the Leave-Setup!`,
-                  emoji: "862306766338523166"
+                  emoji: "🙄"
                 }
               ]
               //define the selection
@@ -239,7 +239,7 @@ module.exports = {
                       {
                         value: "Enable auto Image",
                         description: `I will generate an Image with the Userdata`,
-                        emoji: "865962151649869834"
+                        emoji: "✨"
                       },
                       {
                         value: "Set Image Background",
@@ -289,7 +289,7 @@ module.exports = {
                       {
                         value: "Cancel",
                         description: `Cancel and stop the Leave-Setup!`,
-                        emoji: "862306766338523166"
+                        emoji: "🙄"
                       }
                     ]
                     //define the selection
@@ -661,7 +661,7 @@ module.exports = {
                 {
                   value: `${!GuildSettings.leave.dm ? "Enable Dm Messages": "Disable Dm Messages"}`,
                   description: `${!GuildSettings.leave.dm ? "Send Dm Messages if the user leaves": "Don't send any dms when he leaves"}`,
-                  emoji: "895066899619119105" //
+                  emoji: "✨" //
                 },
                 {
                   value: "Manage the Image",
@@ -671,17 +671,17 @@ module.exports = {
                 {
                   value: "Edit the Message",
                   description: `Edit the Leave Message ...`,
-                  emoji: "877653386747605032"
+                  emoji: "🙌"
                 },
                 {
                   value: `${GuildSettings.leave.invitedm ? "Disable InviteInformation": "Enable Invite Information"}`,
                   description: `${GuildSettings.leave.invitedm ? "No longer show Information who invited him/her": "Show Information about who invited him/her"}`,
-                  emoji: "877653386747605032"
+                  emoji: "🔰"
                 },
                 {
                   value: "Cancel",
                   description: `Cancel and stop the Leave-Setup!`,
-                  emoji: "862306766338523166"
+                  emoji: "🙄"
                 }
               ]
               //define the selection
@@ -761,7 +761,7 @@ module.exports = {
                       {
                         value: "Enable auto Image",
                         description: `I will generate an Image with the Userdata`,
-                        emoji: "865962151649869834"
+                        emoji: "✅"
                       },
                       {
                         value: "Set Image Background",
@@ -811,7 +811,7 @@ module.exports = {
                       {
                         value: "Cancel",
                         description: `Cancel and stop the Leave-Setup!`,
-                        emoji: "862306766338523166"
+                        emoji: "🙄"
                       }
                     ]
                     //define the selection

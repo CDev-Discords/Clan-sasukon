@@ -134,8 +134,8 @@ module.exports = async (client) => {
                 })
             }
             let button_ticket_verifyRow = new MessageActionRow().addComponents([
-                new MessageButton().setStyle('SUCCESS').setCustomId('ticket_verify').setLabel("Verify to Close").setEmoji("865962151649869834"),
-                new MessageButton().setStyle('SECONDARY').setCustomId('ticket_cancel').setLabel("Cancel").setEmoji("866085733499797504"),
+                new MessageButton().setStyle('SUCCESS').setCustomId('ticket_verify').setLabel("Verify to Close").setEmoji("✅"),
+                new MessageButton().setStyle('SECONDARY').setCustomId('ticket_cancel').setLabel("Cancel").setEmoji("🔴"),
             ])
             const oldComponents = message.components;
             const oldEmbeds = message.embeds;
@@ -309,8 +309,8 @@ module.exports = async (client) => {
             //console.log(`${moment().format("HH:mm:ss.SSSS")} 9 check`)
 
             let button_ticket_verifyRow = new MessageActionRow().addComponents([
-                new MessageButton().setStyle('SUCCESS').setCustomId('ticket_verify').setLabel("Verify to Delete").setEmoji("865962151649869834"),
-                new MessageButton().setStyle('SECONDARY').setCustomId('ticket_cancel').setLabel("Cancel").setEmoji("866085733499797504"),
+                new MessageButton().setStyle('SUCCESS').setCustomId('ticket_verify').setLabel("Verify to Delete").setEmoji("✅"),
+                new MessageButton().setStyle('SECONDARY').setCustomId('ticket_cancel').setLabel("Cancel").setEmoji("🔴"),
             ])
             const oldComponents = message.components;
             const oldEmbeds = message.embeds;

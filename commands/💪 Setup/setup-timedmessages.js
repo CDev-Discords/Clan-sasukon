@@ -61,7 +61,7 @@ const { dbEnsure } = require("../../handlers/functions");
             {
               value: "Cancel",
               description: `Cancel and stop the Timed-Messages-Setup!`,
-              emoji: "862306766338523166"
+              emoji: "🙄"
             }
           ]
           //define the selection

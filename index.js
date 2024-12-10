@@ -135,9 +135,9 @@ for (const file of RemoteSqlite) {
 
 
 //Ejecución de un lavalink local (Sólo para máquinas potentes)
-
+// En caso de deshabilitarlo, asegúrate de configurar botconfig.json
 //Asegúrate de tener pm2 instalado en tu máquina
-var lavalink = true
+var lavalink = false
 
 if (lavalink === false) {
     console.log("El Lavalink se ha desactivado".red)

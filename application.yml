@@ -2,6 +2,16 @@ lavalink:
     plugins:
         dependency: dev.lavalink.youtube:youtube-plugin:1.10.2
         repository: https://maven.lavalink.dev/releases
+        youtube:
+            enabled: true
+            allowDirectPlaylistIds: true
+            allowDirectVideoIds: true
+            allowSearch: true
+            clients:
+                - MUSIC
+                - ANDROID_VR
+                - WEB
+                - WEBEMBEDDED
     server:
         bufferDurationMs: 100
         filters:
@@ -52,17 +62,6 @@ metrics:
     prometheus:
         enabled: false
         endpoint: /metrics
-plugins:
-    allowDirectPlaylistIds: true
-    allowDirectVideoIds: true
-    allowSearch: true
-    clients:
-        - MUSIC
-        - ANDROID_VR
-        - WEB
-        - WEBEMBEDDED
-    enabled: true
-    youtube: null
 sentry:
     dsn: ""
     environment: ""

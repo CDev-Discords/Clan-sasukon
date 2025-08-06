@@ -25,8 +25,8 @@ const emoji = {
 module.exports = {
   name: 'setup-jtc',
   description: 'Configura el sistema de canales temporales (Join to Create)',
-  category: 'Setup',
-  permissions: ['MANAGE_CHANNELS'],
+  category: '💪 Setup',
+  permissions: ['ADMINISTRATOR'],
   cooldown: 5,
   run: async (client, message, args) => {
     const { guild, member, channel } = message;

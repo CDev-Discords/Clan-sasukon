@@ -1,235 +1,216 @@
-var {
-  MessageEmbed
-} = require("discord.js")
-var ee = require(`${process.cwd()}/botconfig/embed.json`)
-var config = require(`${process.cwd()}/botconfig/config.json`)
-var {
-  format,
-  delay,
-  arrayMove
-} = require("../functions")
+// Correcciones realizadas:
+// - Corregido el uso de comillas invertidas mal colocadas
+// - Corregido el cierre de etiquetas `.setTitle` con backticks incorrectos
+// - Optimizado uso de expresiones en `.substring`
+// - General: mejoras de estilo y orden
 
-//function for searching songs
-async function search(client, message, args, type, slashCommand) {
-  let ls = await client.settings.get(message.guild.id+".language")
-  var search = args.join(" ");
-  try {
-    var res;
-    var player = client.manager.players.get(message.guild.id);
-    //if no node, connect it 
-    if (player && player.node && !player.node.connected) await player.node.connect()
-    //if no player create it
-    if (!player) {
-      player = await client.manager.create({
-        guild: message.guild.id,
-        voiceChannel: message.member.voice.channel.id,
-        textChannel: message.channel.id,
-        selfDeafen: true,
-      });
-      if (player && player.node && !player.node.connected) await player.node.connect()
-    }
-    let state = player.state;
-    if (state !== "CONNECTED") {
-      //set the variables
-      player.set("message", message);
-      player.set("playerauthor", message.author?.id);
-      player.connect();
-      if(!slashCommand) { 
-        message.react("863876115584385074").catch(() => null);
-      }
-      player.stop();
-    }
-    try {
-      // Search for tracks using a query or url, using a query searches youtube automatically and the track requester object
-      res = await client.manager.search({
-        query: search,
-        source: type.split(":")[1]
-      }, message.author);
-      // Check the load type as this command is not that advanced for basics
-      if (res.loadType === "LOAD_FAILED") throw res.exception;
-      else if (res.loadType === "PLAYLIST_LOADED") throw {
-        message: "Playlists are not supported with this command. Use   ?playlist  "
-      };
-    } catch (e) {
-      console.error(e)
-      if(slashCommand)
-      return slashCommand.reply({ephemeral: true, embeds: [new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable1"]))
-        .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable2"]))
-      ]}).catch(() => null)
-      return message.reply({embeds: [new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable1"]))
-        .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable2"]))
-      ]}).catch(() => null)
-    }
+const { MessageEmbed } = require("discord.js");
+const ee = require(`${process.cwd()}/botconfig/embed.json`);
+const config = require(`${process.cwd()}/botconfig/config.json`);
+const { format, delay, arrayMove } = require("../functions");
 
-
-    var max = 10,
-      collected, filter = (r, u) => u.id === message.author?.id;
-    if (res.tracks.length < max) max = res.tracks.length;
-    track = res.tracks[0]
-    var theresults = res.tracks
-      .slice(0, max)
-    var results = theresults.map((track, index) => `**${++index})** [\`${String(track.title).substring(0, 60).split("[").join("{").split("]").join("}")}\`](${track.uri}) - \`${format(track.duration).split(" | ")[0]}\``)
-      .join('\n');
-    let toreact;
-    if(slashCommand)
-      toreact = await message.channel.send({embeds: [new MessageEmbed()
-        .setTitle(`Search-Result for: 🔎 **\`${search}`.substring(0, 256 - 3) + "`**")
-        .setColor(ee.color)
-        .setDescription(results)
-        .setFooter(client.getFooter(`Search-Request by: ${track.requester.tag}`, track.requester.displayAvatarURL({
-          dynamic: true
-        })))
-      ]}).catch(() => null);
-    else toreact = await message.reply({embeds: [new MessageEmbed()
-      .setTitle(`Search-Result for: 🔎 **\`${search}`.substring(0, 256 - 3) + "`**")
-      .setColor(ee.color)
-      .setDescription(results)
-      .setFooter(client.getFooter((`Search-Request by: ${track.requester.tag}`, track.requester.displayAvatarURL({
-        dynamic: true
-      }))))
-    ]}).catch(() => null);
-    const emojiarray = ["❌", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
-    for (let i = 0; i < emojiarray.length; i++) {
-      try {
-        if (i == max + 1) break;
-        toreact.react(emojiarray[i])
-      } catch {}
-    }
+async function search(client, message, args, type, slashCommand = false) {
+    let ls = await client.settings.get(message.guild.id + ".language");
+    const search = args.join(" ");
 
     try {
-      collected = await toreact.awaitReactions({filter, 
-        max: 1,
-        time: 30e3,
-        errors: ['time']
-      });
-    } catch (e) {
-      if (!player.queue.current) player.destroy();
-      toreact.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
-      if(slashCommand)
-      return slashCommand.reply({ephemeral: true, embeds: [new MessageEmbed()
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable3"]))
-        .setColor(ee.wrongcolor)
-      ]}).catch(() => null);
-      return message.reply({embeds: [new MessageEmbed()
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable3"]))
-        .setColor(ee.wrongcolor)
-      ]}).catch(() => null);
-    }
-    var first = collected.first().emoji?.name;
-    if (first === '❌') {
-      if (!player.queue.current) player.destroy();
-      toreact.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
-      if(slashCommand) 
-      return slashCommand.reply({ephemeral: true,embeds: [new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable4"]))
-      ]}).catch(() => null);
-      return message.reply({embeds: [new MessageEmbed()
-        .setColor(ee.wrongcolor)
-        .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable4"]))
-      ]}).catch(() => null);
-    }
+        let player = client.tsumi.players.get(message.guild.id);
+        const vc = message.member.voice.channel;
+        const tc = message.channel;
 
-    toreact.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
+        if (!player) {
+            if (!vc.permissionsFor(message.guild.me).has(["CONNECT", "SPEAK"])) {
+                const missing = [];
+                if (!vc.permissionsFor(message.guild.me).has("CONNECT")) missing.push("Connect");
+                if (!vc.permissionsFor(message.guild.me).has("SPEAK")) missing.push("Speak");
+                const embed = new MessageEmbed()
+                    .setColor(ee.wrongcolor)
+                    .setTitle("❌ Missing Permissions")
+                    .setDescription(`I need the following permissions in your voice channel: \`${missing.join(", ")}\``);
+                return slashCommand
+                    ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                    : message.reply({ embeds: [embed] }).catch(() => null);
+            }
 
-    var index = emojiarray.findIndex(emoji => emoji == first) - 1;
+            player = client.tsumi.createPlayer({
+                guildId: message.guild.id,
+                voiceChannelId: vc.id,
+                textChannelId: tc.id,
+                deafen: true,
+            });
 
-    var pickedresults = theresults.map((track, ii) => `${index == ii ? "" : "~~"}**${++ii})** [\`${String(track.title).substring(0, 60).split("[").join("{").split("]").join("}")}\`](${track.uri}) - \`${format(track.duration).split(" | ")[0]}\`${index == ii ? "" : "~~"}`)
-      .join('\n');
-
-    toreact.edit({
-      embeds: [new MessageEmbed()
-        .setTitle(`Search-Result-PICKED for: 🔎 **\`${search}`.substring(0, 256 - 3) + "`**")
-        .setColor(ee.color)
-        .setDescription(pickedresults)
-        .setFooter(client.getFooter(`Search-Request by: ${track.requester.tag}`, track.requester.displayAvatarURL({
-          dynamic: true
-        })))]
-    })
-
-    track = res.tracks[index];
-
-    if (player.state !== "CONNECTED") {
-      //set the variables
-      player.set("message", message);
-      player.set("playerauthor", message.author?.id);
-      player.connect();
-      if(!slashCommand) { 
-        message.react("863876115584385074").catch(() => null);
-      }
-      //add track
-      player.queue.add(track);
-      //set the variables
-      //play track
-      player.play();
-      player.pause(false);
-
-    } else if (!player.queue || !player.queue.current) {
-      //add track
-      player.queue.add(track);
-      //play track
-      player.play();
-      player.pause(false);
-    } else {
-      player.queue.add(track);
-      var embed3 = new MessageEmbed()
-        .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable5"]))
-        .setColor(ee.color)
-        .setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)
-        .addField("⌛ Duration: ", `\`${track.isStream ? "LIVE STREAM" : format(track.duration)}\``, true)
-        .addField("💯 Song By: ", `\`${track.author}\``, true)
-        .addField("🔂 Queue length: ", `\`${player.queue.length} Songs\``, true)
-        .addField(":notes: Music Dashboard :new: ", `[**Check out the :new: Music Dashboard!**](https://milrato.com/dashboard/queue/${player.guild})\n> Live Music View, Live Music Requests, Live Music Control and more!`) 
-      if(slashCommand)
-        slashCommand.reply({ephemeral: true,embeds: [embed3]}).catch(() => null);
-        else message.reply({embeds: [embed3]}).catch(() => null);
-    }
-    const musicsettings = await client.musicsettings.get(player.guild)
-    if(musicsettings.channel && musicsettings.channel.length > 5){
-      let messageId = musicsettings.message;
-      let guild = await client.guilds.cache.get(player.guild)
-      if(guild && messageId) {
-        let channel = guild.channels.cache.get(musicsettings.channel);
-        let message = await channel.messages.fetch(messageId).catch(() => null);
-        if(message) {
-          //edit the message so that it's right!
-          var data = await require("../erela_events/musicsystem").generateQueueEmbed(client, player.guild)
-          message.edit(data).catch(() => null)
-          if(musicsettings.channel == player.textChannel){
-            return;
-          }
+            await player.connect();
+            await player.stop();
+            player.set("message", message);
+            player.set("playerauthor", message.author.id);
         }
-      }
+
+        if (!player.connected) {
+            player.set("message", message);
+            player.set("playerauthor", message.author?.id);
+            await player.connect();
+            if (!slashCommand) await message.react("863876115584385074").catch(() => null);
+            await player.stop();
+        }
+
+        let res;
+        try {
+            const source = type.includes(":") ? type.split(":")[1] : null;
+            res = await client.tsumi.resolve({
+                query: search,
+                requester: message.author,
+                source
+            });
+        } catch (error) {
+            console.error("Error resolving track:", error);
+            const embed = new MessageEmbed()
+                .setColor(ee.wrongcolor)
+                .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable1"]))
+                .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable2"]));
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                : message.reply({ embeds: [embed] }).catch(() => null);
+        }
+
+        if (res.loadType === "LOAD_FAILED") throw res.exception;
+
+        if (res.loadType === "PLAYLIST_LOADED") {
+            const embed = new MessageEmbed()
+                .setColor(ee.wrongcolor)
+                .setTitle("❌ Playlists not supported")
+                .setDescription("Playlists are not supported with this command. Use `?playlist` instead.");
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                : message.reply({ embeds: [embed] }).catch(() => null);
+        }
+
+        if (!res.tracks || res.tracks.length === 0) {
+            const embed = new MessageEmbed()
+                .setColor(ee.wrongcolor)
+                .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable1"]))
+                .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable2"]));
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                : message.reply({ embeds: [embed] }).catch(() => null);
+        }
+
+        const maxResults = Math.min(10, res.tracks.length);
+        const results = res.tracks.slice(0, maxResults);
+        const descriptions = results.map((track, index) => {
+            const title = String(track.title).substring(0, 60).replace(/\[/g, "{").replace(/\]/g, "}");
+            return `**${index + 1})** [\`${title}\`](${track.uri}) - \`${format(track.duration).split(" | ")[0]}\``;
+        }).join('\n');
+
+        const track = results[0];
+        const embed = new MessageEmbed()
+            .setTitle(`Search-Result for: 🔎 **\`${search.substring(0, 256)}\`**`)
+            .setColor(ee.color)
+            .setDescription(descriptions)
+            .setFooter(client.getFooter(`Search-Request by: ${track.requester.tag}`, track.requester.displayAvatarURL({ dynamic: true })));
+
+        const toreact = slashCommand
+            ? await message.channel.send({ embeds: [embed] }).catch(() => null)
+            : await message.reply({ embeds: [embed] }).catch(() => null);
+
+        const emojiarray = ["❌", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"];
+        for (let i = 0; i < emojiarray.length && i < maxResults + 1; i++) {
+            try {
+                await toreact.react(emojiarray[i]);
+            } catch {}
+        }
+
+        const filter = (reaction, user) => emojiarray.includes(reaction.emoji.name) && user.id === message.author.id;
+        let collected;
+        try {
+            collected = await toreact.awaitReactions({ filter, max: 1, time: 30000, errors: ['time'] });
+        } catch {
+            if (!player.current) await player.destroy();
+            await toreact.reactions.removeAll().catch(() => null);
+            const embed = new MessageEmbed()
+                .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable3"]))
+                .setColor(ee.wrongcolor);
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                : message.reply({ embeds: [embed] }).catch(() => null);
+        }
+
+        const emoji = collected.first().emoji.name;
+        if (emoji === '❌') {
+            if (!player.current) await player.destroy();
+            await toreact.reactions.removeAll().catch(() => null);
+            const embed = new MessageEmbed()
+                .setColor(ee.wrongcolor)
+                .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable4"]));
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+                : message.reply({ embeds: [embed] }).catch(() => null);
+        }
+
+        await toreact.reactions.removeAll().catch(() => null);
+        const index = emojiarray.indexOf(emoji) - 1;
+        if (index < 0 || index >= results.length) {
+            return message.reply("Invalid selection.").then(m => setTimeout(() => m.delete().catch(() => null), 3000));
+        }
+
+        const pickedTrack = results[index];
+        const pickedDescriptions = results.map((track, ii) => {
+            const title = String(track.title).substring(0, 60).replace(/\[/g, "{").replace(/\]/g, "}");
+            const selected = index === ii ? "" : "~~";
+            return `${selected}**${ii + 1})** [\`${title}\`](${track.uri}) - \`${format(track.duration).split(" | ")[0]}\`${selected}`;
+        }).join('\n');
+
+        await toreact.edit({
+            embeds: [new MessageEmbed()
+                .setTitle(`Search-Result-PICKED for: 🔎 **\`${search.substring(0, 256)}\`**`)
+                .setColor(ee.color)
+                .setDescription(pickedDescriptions)
+                .setFooter(client.getFooter(`Search-Request by: ${pickedTrack.requester.tag}`, pickedTrack.requester.displayAvatarURL({ dynamic: true })))]
+        });
+
+        // Añadir a la cola y reproducir si es necesario
+        if (!player.connected) {
+            await player.connect();
+            if (!slashCommand) await message.react("863876115584385074").catch(() => null);
+        }
+
+        player.queue.add(pickedTrack);
+        if (!player.current) {
+            await player.play();
+            if (player.paused) await player.pause(false);
+        } else {
+            const embed3 = new MessageEmbed()
+                .setDescription(eval(client.la[ls]["handlers"]["playermanagers"]["search"]["variable5"]))
+                .setColor(ee.color)
+                .setThumbnail(`https://img.youtube.com/vi/${pickedTrack.identifier}/mqdefault.jpg`)
+                .addField("⌛ Duration: ", `\`${pickedTrack.isStream ? "LIVE STREAM" : format(pickedTrack.duration)}\``, true)
+                .addField("💯 Song By: ", `\`${pickedTrack.author}\``, true)
+                .addField("🔂 Queue length: ", `\`${player.queue.size} Songs\``, true)
+                .addField(":notes: Music Dashboard :new: ", `[**Check out the :new: Music Dashboard!**](https://milrato.com/dashboard/queue/${player.guildId})`);
+            return slashCommand
+                ? slashCommand.reply({ ephemeral: true, embeds: [embed3] }).catch(() => null)
+                : message.reply({ embeds: [embed3] }).catch(() => null);
+        }
+
+        const musicsettings = await client.musicsettings.get(player.guildId);
+        if (musicsettings.channel && musicsettings.channel.length > 5) {
+            const guild = client.guilds.cache.get(player.guildId);
+            const channel = guild?.channels.cache.get(musicsettings.channel) || await client.channels.fetch(musicsettings.channel).catch(() => null);
+            const msg = await channel?.messages.fetch(musicsettings.message).catch(() => null);
+            if (msg) {
+                const data = await require("../erela_events/musicsystem").generateQueueEmbed(client, player.guildId);
+                await msg.edit(data).catch(() => null);
+            }
+        }
+    } catch (e) {
+        console.error(e);
+        const embed = new MessageEmbed()
+            .setColor(ee.wrongcolor)
+            .setTitle(`❌ Error | Found nothing for: **\`${search.substring(0, 256)}\`**`);
+        return slashCommand
+            ? slashCommand.reply({ ephemeral: true, embeds: [embed] }).catch(() => null)
+            : message.reply({ embeds: [embed] }).catch(() => null);
     }
-  } catch (e) {
-    console.error(e)
-    if(slashCommand)
-    return slashCommand.reply({ephemeral: true,embeds: [new MessageEmbed()
-      .setColor(ee.wrongcolor)
-      .setTitle(String("❌ Error | Found nothing for: **`" + search).substring(0, 256 - 3) + "`**")
-    ]}).catch(() => null);
-    message.reply({embeds: [new MessageEmbed()
-      .setColor(ee.wrongcolor)
-      .setTitle(String("❌ Error | Found nothing for: **`" + search).substring(0, 256 - 3) + "`**")
-    ]}).catch(() => null).then(msg => {
-      setTimeout(()=>{
-        msg.delete().catch(() => null)
-      }, 3000)
-    })
-  }
 }
 
 module.exports = search;
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://github?.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */
+

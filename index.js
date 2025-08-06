@@ -110,7 +110,7 @@ app.listen(port, () => console.log(`
 
 var exec = require('child_process').exec;
 
-exec('pm2 start node canvasAPI.js',
+exec('pm2 start canvasAPI.js',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
@@ -137,7 +137,7 @@ for (const file of RemoteSqlite) {
 //Ejecución de un lavalink local (Sólo para máquinas potentes)
 // En caso de deshabilitarlo, asegúrate de configurar botconfig.json
 //Asegúrate de tener pm2 instalado en tu máquina
-var lavalink = false
+var lavalink = true
 
 if (lavalink === false) {
     console.log("El Lavalink se ha desactivado".red)

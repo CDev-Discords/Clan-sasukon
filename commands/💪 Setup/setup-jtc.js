@@ -1,357 +1,397 @@
-var { MessageEmbed } = require("discord.js");
-var Discord = require("discord.js");
-var config = require(`../../botconfig/config.json`);
-var ee = require(`../../botconfig/embed.json`);
-var {
-  dbEnsure
-} = require(`../../handlers/functions`);
-const { MessageButton, MessageActionRow, MessageSelectMenu } = require('discord.js')
-module.exports = {
-    name: "setup-jtc",
-    category: "💪 Setup",
-    aliases: ["setup-jointocreate", "setupjtc", "setupjointocreate", "jtc-setup", "jtcsetup"],
-    cooldown: 5,
-    usage: "setup-jtc  -->  Follow Steps",
-    description: "Manage 100 different Join to Create Systems",
-    type: "system",
-    memberpermissions: ["ADMINISTRATOR"],
-    run: async (client, message, args, cmduser, text, prefix, player, es, ls, GuildSettings) => {
-  
-    var timeouterror;
-    message.reply("🧐 | Este comando tiene problemas desconocidos que no hemos podido arreglar, inténtalo de nuevo más tarde")
-    return
-    try{
-      let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
-      first_layer()
-      async function first_layer(){
-        
-        let menuoptions = [ ]
-        for (let i = 0; i < 100; i++){
-          menuoptions.push({
-            value: `${i + 1} Join-To-Create System`,
-            description: `Manage/Edit the ${i + 1} Join-to-Create Setup`,
-          })
-        }
-        
-        let row1 = new MessageActionRow().addComponents(new MessageSelectMenu()
-          .setCustomId('MenuSelection')
-          .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
-          .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
-          .setPlaceholder('Click me to setup the Join-to-Create System!')
-          .addOptions(
-            menuoptions.slice(0, 25).map(option => {
-              let Obj = {
-                label: option.label ? option.label.substring(0, 50) : option.value.substring(0, 50),
-                value: option.value.substring(0, 50),
-                description: option.description.substring(0, 50),
-              }
-              if (option.emoji) Obj.emoji = option.emoji;
-              return Obj;
-            })
-          )
-        )
-        let row2 = new MessageActionRow().addComponents(new MessageSelectMenu()
-          .setCustomId('MenuSelection2')
-          .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
-          .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
-          .setPlaceholder('Click me to setup the Join-to-Create System!')
-          .addOptions(
-            menuoptions.slice(25, 50).map(option => {
-              let Obj = {
-                label: option.label ? option.label.substring(0, 50) : option.value.substring(0, 50),
-                value: option.value.substring(0, 50),
-                description: option.description.substring(0, 50),
-              }
-              if (option.emoji) Obj.emoji = option.emoji;
-              return Obj;
-            })
-          )
-        )
-        let row3 = new MessageActionRow().addComponents(new MessageSelectMenu()
-          .setCustomId('MenuSelection3')
-          .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
-          .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
-          .setPlaceholder('Click me to setup the Join-to-Create System!')
-          .addOptions(
-            menuoptions.slice(50, 75).map(option => {
-              let Obj = {
-                label: option.label ? option.label.substring(0, 50) : option.value.substring(0, 50),
-                value: option.value.substring(0, 50),
-                description: option.description.substring(0, 50),
-              }
-              if (option.emoji) Obj.emoji = option.emoji;
-              return Obj;
-            })
-          )
-        )
-        let row4 = new MessageActionRow().addComponents(new MessageSelectMenu()
-          .setCustomId('MenuSelection4')
-          .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
-          .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
-          .setPlaceholder('Click me to setup the Join-to-Create System!')
-          .addOptions(
-            menuoptions.slice(75, 100).map(option => {
-              let Obj = {
-                label: option.label ? option.label.substring(0, 50) : option.value.substring(0, 50),
-                value: option.value.substring(0, 50),
-                description: option.description.substring(0, 50),
-              }
-              if (option.emoji) Obj.emoji = option.emoji;
-              return Obj;
-            })
-          )
-        )
-        
-        //define the embed
-        let MenuEmbed = new Discord.MessageEmbed()
-        .setColor(es.color)
-        .setAuthor(client.getAuthor('Join-to-Create Setup', 'https://images-ext-1.discordapp.net/external/Xd0yT3UJvN6yR0Ivgj83m8-rcsWpzRjd_Z7TRSVwJKE/https/cdn.discordapp.com/icons/1233544365046104124/56430b6005db14d13ea4667b4db9ef48.webp?format=webp&width=192&height=192', 'https://discord.gg/milrato'))
-        .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable2"]))
-        //send the menu msg
-        let menumsg = await message.reply({embeds: [MenuEmbed], components: [row1, row2, row3, row4]})
-        //function to handle the menuselection
-        function menuselection(menu) {
-          let menuoptiondata = menuoptions.find(v=>v.value == menu?.values[0])
-          if(menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable3"]))
-          client.disableComponentMessage(menu);
-          let SetupNumber = menu?.values[0].split(" ")[0]
-          second_layer(SetupNumber, menuoptiondata)
-        }
-        //Create the collector
-        const collector = menumsg.createMessageComponentCollector({ 
-          filter: i => i?.isSelectMenu() && i?.message.author?.id == client.user.id && i?.user,
-          time: 90000
-        })
-        //Menu Collections
-        collector.on('collect', async menu => {
-          if (menu?.user.id === cmduser.id) {
-            collector.stop();
-            let menuoptiondata = menuoptions.find(v=>v.value == menu?.values[0])
-            if(menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable3"]))
-            menuselection(menu)
-          }
-          else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
-        });
-        //Once the Collections ended edit the menu message
-        collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected && collected?.first()?.values?.[0] ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
-        });
-      }
-      async function second_layer(SetupNumber, menuoptiondata)
-      {
-        var pre = `jtcsettings${SetupNumber}`
-        let thedb = client.jtcsettings;
-        var Obj = {}; Obj[pre] = {
-          channel: "",
-          channelname: "{user}' Lounge",
-          guild: message.guild.id,
-        };
-        await thedb.ensure(message.guild.id, Obj);
-        
-        let menuoptions = [
-          {
-            value: "Create Channel Setup",
-            description: `Create a Join to Create Channel`,
-            emoji: "⚙️"
-          },
-          {
-            value: "Use Current Channel",
-            description: `Use your connected VC as a new Setup`,
-            emoji: "🎙️"
-          },
-          {
-            value: "Change the Temp Names",
-            description: `Change the temporary Names of new VCS`,
-            emoji: "😎"
-          },
-          {
-            value: "Cancel",
-            description: `Cancel and stop the Ticket-Setup!`,
-            emoji: "❌"
-          }
-        ]
-        //define the selection
-        let Selection = new MessageSelectMenu()
-          .setCustomId('MenuSelection') 
-          .setMaxValues(1)
-          .setMinValues(1)
-          .setPlaceholder(`Click me to manage the ${SetupNumber} Join-To-Create System!\n\n**You've picked:**\n> ${menuoptiondata.value}`)
-          .addOptions(
-          menuoptions.map(option => {
-            let Obj = {
-              label: option.label ? option.label.substring(0, 50) : option.value.substring(0, 50),
-              value: option.value.substring(0, 50),
-              description: option.description.substring(0, 50),
-            }
-          if(option.emoji) Obj.emoji = option.emoji;
-          return Obj;
-         }))
-        
-        //define the embed
-        let MenuEmbed = new Discord.MessageEmbed()
-        .setColor(es.color)
-        .setAuthor(client.getAuthor(SetupNumber + " Join-to-Create Setup", 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/joypixels/291/studio-microphone_1f399-fe0f.png', 'https://discord.gg/milrato'))
-        .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable4"]))
-        //send the menu msg
-        let menumsg = await message.reply({embeds: [MenuEmbed], components: [new MessageActionRow().addComponents(Selection)]})
-        //function to handle the menuselection
-        function menuselection(menu) {
-          if(menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable5"]))
-          client.disableComponentMessage(menu);
-          handle_the_picks(menu?.values[0], SetupNumber, thedb, pre)
-        }
-        //Create the collector
-        const collector = menumsg.createMessageComponentCollector({ 
-          filter: i => i?.isSelectMenu() && i?.message.author?.id == client.user.id && i?.user,
-          time: 90000
-        })
-        //Menu Collections
-        collector.on('collect', async menu => {
-          if (menu?.user.id === cmduser.id) {
-            collector.stop();
-            if(menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable3"]))
-            menuselection(menu)
-          }
-          else menu?.reply({content: `❌ You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
-        });
-        //Once the Collections ended edit the menu message
-        collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected && collected?.first()?.values?.[0] ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
-        });
-      }
-      async function handle_the_picks(optionhandletype, SetupNumber, thedb, pre){
-        switch (optionhandletype) {
-          case "Create Channel Setup": {
-            var maxbitrate = 96000;
-            var boosts = message.guild.premiumSubscriptionCount;
-            if (boosts >= 2) maxbitrate = 128000;
-            if (boosts >= 15) maxbitrate = 256000;
-            if (boosts >= 30) maxbitrate = 384000;
-            message.guild.channels.create("Join to Create", {
-              type: 'GUILD_VOICE',
-              bitrate: maxbitrate,
-              userLimit: 4,
-              permissionOverwrites: [ //update the permissions
-                { //the role "EVERYONE" is just able to VIEW_CHANNEL and CONNECT
-                  id: message.guild.id,
-                  allow: ['VIEW_CHANNEL', "CONNECT"],
-                  deny: ["SPEAK"]
-                },
-              ],
-            }).then(async vc => {
-              if (message.channel.parent) vc.setParent(message.channel.parent.id)
-              message.reply({embeds: [new Discord.MessageEmbed()
-                .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable6"]))
-                .setColor(es.color)
-                .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable7"]))
-              .setFooter(client.getFooter(es))
-              ]});
-              await thedb?.set(message.guild.id+`.${pre}.channel`, vc.id);
-            })
-          } break;
-          case "Use Current Channel": {
-            var {
-              channel
-            } = message.member.voice;
-            if (!channel) return message.reply({embeds: [new Discord.MessageEmbed()
-                .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable8"]))
-                .setColor(es.wrongcolor)
-                .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable9"]))
-                .setFooter(client.getFooter(es))
-              ]});
-              message.reply({embeds: [new Discord.MessageEmbed()
-                .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable10"]))
-                .setColor(es.color)
-                .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable11"]))
-                .setFooter(client.getFooter(es))
-              ]});
-              await thedb?.set(message.guild.id+`.${pre}.channel`, channel.id);
-          } break;
-          case "Change the Temp Names": {
-            var tempmsg = await message.reply({embeds: [new Discord.MessageEmbed()
-              .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable12"]))
-              .setColor(es.color)
-              .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable13"]))
-              .setFooter(client.getFooter(es))]
-            })
-            await tempmsg.channel.awaitMessages({filter: m => m.author.id === message.author?.id,
-                max: 1,
-                time: 90000,
-                errors: ["time"]
-              })
-              .then(async collected => {
-                await thedb?.set(message.guild.id+"."+pre+".channelname", `${collected.first().content}`.substring(0, 32));
-                let channelname = await thedb?.get(message.guild.id+"."+pre+".channelname")
-                message.reply({embeds: [new Discord.MessageEmbed()
-                  .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable14"]))
-                  .setColor(es.color)
-                  .setDescription(`**New Channel Name:**\n> \`${channelname}\`\n\n**What it could look like:**\n> \`${channelname.replace("{user}", `${message.author.username}`)}\``)
-                  .setFooter(client.getFooter(es))
-                ]});
-              })
-              .catch(e => {
-                timeouterror = e;
-              })
-            if (timeouterror)
-              return message.reply({embeds: [new Discord.MessageEmbed()
-                .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable16"]))
-                .setColor(es.wrongcolor)
-                .setDescription(`Cancelled the Operation!`.substring(0, 2000))
-                .setFooter(client.getFooter(es))
-              ]});
-          } break;
-        }
-      }
-        
+const {
+  MessageEmbed,
+  MessageActionRow,
+  MessageButton,
+} = require('discord.js');
 
-    } catch (e) {
-        console.error(e)
-        return message.reply({embeds: [new MessageEmbed()
-          .setColor(es.wrongcolor)
-          .setFooter(client.getFooter(es))
-          .setTitle(client.la[ls].common.erroroccur)
-          .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-jtc"]["variable45"]))
-        ]});
+const emoji = {
+  next: '▶️',
+  prev: '◀️',
+  add: '➕',
+  edit: '🔧',
+  delete: '🗑️',
+  cancel: '❌',
+  check: '✅',
+  voice: '🔊',
+  user: '👤',
+  number: '#️⃣',
+  owner: '👑',
+  info: 'ℹ️',
+  warning: '⚠️',
+  hardreset: '💥',
+  remove: '🚮'
+};
+
+module.exports = {
+  name: 'setup-jtc',
+  description: 'Configura el sistema de canales temporales (Join to Create)',
+  category: 'Setup',
+  permissions: ['MANAGE_CHANNELS'],
+  cooldown: 5,
+  run: async (client, message, args) => {
+    const { guild, member, channel } = message;
+
+    // ✅ Declarar base de datos
+    let theDB = client.jtcsettings;
+
+    // 🛠️ Embed base
+    const embed = new MessageEmbed()
+      .setColor('#00FFC3')
+      .setAuthor({ name: guild.name, iconURL: guild.iconURL({ dynamic: true }) })
+      .setFooter({ text: 'Sistema Join-to-Create | Página' });
+
+    // 🗂️ Obtener configuraciones
+    const configs = (await theDB.get(guild.id, 'configs')) || [];
+
+    // 🧮 Dividir en listas de 25 y páginas de 4 listas
+    const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (_, i) => arr.slice(i * size, i * size + size));
+    const lists = chunk(configs, 25);
+    const pages = chunk(lists, 4);
+    let currentPageIndex = 0;
+
+    // 🔧 Generar embed de página
+    const generatePageEmbed = (pageIndex) => {
+      const page = pages[pageIndex] || [];
+      const totalConfigs = configs.length;
+
+      let description = '';
+
+      if (totalConfigs === 0) {
+        description = `${emoji.info} No hay configuraciones. Usa ${emoji.add} para crear una.`;
+      } else {
+        description = page.map((list, idx) => {
+          const listIndex = pageIndex * 4 + idx;
+          const start = listIndex * 25 + 1;
+          const end = Math.min(start + list.length - 1, start + 24);
+          return `**Lista ${listIndex + 1}** (${start}-${end})\n${list.map((c, i) => `> ${i + 1}. <#${c.channel_id}>`).join('\n')}`;
+        }).join('\n\n');
+      }
+
+      embed
+        .setTitle(`${emoji.voice} Configuraciones Join-to-Create (${totalConfigs}/200)`)
+        .setDescription(description)
+        .setFooter({ text: `Página ${pageIndex + 1}/${pages.length || 1} | ${totalConfigs} configuraciones` });
+
+      return embed;
+    };
+
+    // 🔘 Botones principales
+    const createMainButtons = (pageIndex) => {
+      const prevDisabled = pageIndex === 0;
+      const nextDisabled = pageIndex >= pages.length - 1;
+
+      return new MessageActionRow().addComponents(
+        new MessageButton()
+          .setCustomId('prev')
+          .setLabel('Anterior')
+          .setStyle('SECONDARY')
+          .setEmoji(emoji.prev)
+          .setDisabled(prevDisabled),
+        new MessageButton()
+          .setCustomId('add_config')
+          .setLabel('Nueva')
+          .setStyle('SUCCESS')
+          .setEmoji(emoji.add),
+        new MessageButton()
+          .setCustomId('next')
+          .setLabel('Siguiente')
+          .setStyle('SECONDARY')
+          .setEmoji(emoji.next)
+          .setDisabled(nextDisabled)
+      );
+    };
+
+    // 🔘 Botones de acción peligrosa
+    const createActionButtons = () => {
+      return new MessageActionRow().addComponents(
+        new MessageButton()
+          .setCustomId('hardreset')
+          .setLabel('Hard Reset')
+          .setStyle('DANGER')
+          .setEmoji(emoji.hardreset),
+        new MessageButton()
+          .setCustomId('delete_single')
+          .setLabel('Eliminar')
+          .setStyle('SECONDARY')
+          .setEmoji(emoji.remove),
+        new MessageButton()
+          .setCustomId('cancel')
+          .setLabel('Cancelar')
+          .setStyle('PRIMARY')
+          .setEmoji(emoji.cancel)
+      );
+    };
+
+    // 📨 Enviar mensaje inicial
+    let msg = await channel.send({
+      embeds: [generatePageEmbed(currentPageIndex)],
+      components: [
+        createMainButtons(currentPageIndex),
+        createActionButtons()
+      ]
+    });
+
+    // 🔁 Coleccionador de interacciones
+    const filter = i => i.user.id === member.id;
+    const collector = msg.createMessageComponentCollector({ filter, time: 300000 }); // 5 minutos
+
+    collector.on('collect', async i => {
+      if (!i.deferred) await i.deferUpdate();
+
+      // 📌 Navegación
+      if (i.customId === 'next' && currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        await msg.edit({ embeds: [generatePageEmbed(currentPageIndex)], components: [createMainButtons(currentPageIndex), createActionButtons()] });
+      } else if (i.customId === 'prev' && currentPageIndex > 0) {
+        currentPageIndex--;
+        await msg.edit({ embeds: [generatePageEmbed(currentPageIndex)], components: [createMainButtons(currentPageIndex), createActionButtons()] });
+      }
+
+      // ➕ Nueva configuración
+      else if (i.customId === 'add_config') {
+        if (configs.length >= 200) {
+          await i.followUp({
+            content: `${emoji.delete} No puedes tener más de 200 configuraciones.`,
+            ephemeral: true
+          });
+          return;
+        }
+
+        const setupEmbed = new MessageEmbed()
+          .setColor('#00BFFF')
+          .setTitle(`${emoji.add} Crear nueva configuración`)
+          .setDescription(
+            `${emoji.voice} **Opción 1:** Usa un canal existente\n` +
+            `${emoji.user} **Opción 2:** Usa el canal donde estés ahora\n\n` +
+            `Responde con:\n` +
+            `1️⃣ para elegir un canal por ID\n` +
+            `2️⃣ para usar tu canal actual\n` +
+            `${emoji.cancel} para cancelar`
+          );
+
+        await msg.edit({ embeds: [setupEmbed], components: [] });
+
+        const choice = await awaitResponse(message);
+        if (!choice) return;
+
+        let targetChannel = null;
+
+        if (choice.content === '1') {
+          await msg.edit({
+            embeds: [new MessageEmbed()
+              .setColor('#FFD700')
+              .setTitle(`${emoji.voice} Ingresa el ID del canal de voz`)
+              .setDescription(`Envía el **ID numérico** del canal de voz principal.`)
+            ],
+            components: []
+          });
+
+          const idMsg = await awaitResponse(message);
+          if (!idMsg) return;
+
+          const id = idMsg.content.trim();
+          targetChannel = guild.channels.cache.get(id);
+          if (!targetChannel || targetChannel.type !== 'GUILD_VOICE') {
+            await message.channel.send(`${emoji.delete} Canal no válido o no es de voz.`);
+            return;
+          }
+        } else if (choice.content === '2') {
+          if (!member.voice.channel) {
+            await message.channel.send(`${emoji.delete} No estás en un canal de voz.`);
+            return;
+          }
+          targetChannel = member.voice.channel;
+        } else {
+          await message.channel.send(`${emoji.cancel} Opción no válida.`);
+          return;
+        }
+
+        await msg.edit({
+          embeds: [new MessageEmbed()
+            .setColor('#2ECC71')
+            .setTitle(`${emoji.edit} Nombre del canal temporal`)
+            .setDescription(
+              `Ejemplo: \`{User}'s Room ({Number})\`\n\n` +
+              `Variables:\n` +
+              `- \`{User}\` → Nombre del dueño\n` +
+              `- \`{Number}\` → Número de canal\n\n` +
+              `Ingresa el nombre del canal temporal:`
+            )
+          ],
+          components: []
+        });
+
+        const nameMsg = await awaitResponse(message);
+        if (!nameMsg) return;
+
+        const templateName = nameMsg.content.slice(0, 99);
+
+        const newConfig = {
+          channel_id: targetChannel.id,
+          template_name: templateName,
+          created_at: Date.now()
+        };
+
+        configs.push(newConfig);
+        await theDB.set(guild.id, configs, 'configs');
+
+        const successEmbed = new MessageEmbed()
+          .setColor('#2ECC71')
+          .setTitle(`${emoji.check} Configuración creada`)
+          .setDescription(
+            `${emoji.voice} Canal principal: <#${targetChannel.id}>\n` +
+            `${emoji.user} Nombre: \`${templateName}\`\n` +
+            `${emoji.info} Listo para usarse.`
+          );
+
+        await msg.edit({ embeds: [successEmbed] });
+        collector.stop();
+        return;
+      }
+
+      // 💥 Hard Reset (confirmación)
+      else if (i.customId === 'hardreset') {
+        if (configs.length === 0) {
+          await i.followUp({
+            content: `${emoji.info} No hay configuraciones para eliminar.`,
+            ephemeral: true
+          });
+          return;
+        }
+
+        const confirmEmbed = new MessageEmbed()
+          .setColor('#FF5555')
+          .setTitle(`${emoji.warning} ¿Eliminar TODAS las configuraciones?`)
+          .setDescription(
+            `Esta acción **eliminará todas las ${configs.length} configuraciones**.\n` +
+            `Esta acción **no se puede deshacer**.\n\n` +
+            `¿Estás seguro?`
+          );
+
+        const confirmRow = new MessageActionRow().addComponents(
+          new MessageButton()
+            .setCustomId('confirm_hardreset')
+            .setLabel('Sí, eliminar todo')
+            .setStyle('DANGER')
+            .setEmoji(emoji.hardreset),
+          new MessageButton()
+            .setCustomId('cancel_hardreset')
+            .setLabel('Cancelar')
+            .setStyle('SUCCESS')
+            .setEmoji(emoji.cancel)
+        );
+
+        await msg.edit({ embeds: [confirmEmbed], components: [confirmRow] });
+        return;
+      }
+
+      // ✅ Confirmar Hard Reset
+      else if (i.customId === 'confirm_hardreset') {
+        await theDB.delete(guild.id, 'configs');
+        const resetEmbed = new MessageEmbed()
+          .setColor('#FF5555')
+          .setTitle(`${emoji.hardreset} Todas las configuraciones eliminadas`)
+          .setDescription(`${emoji.info} Se han eliminado **${configs.length} configuraciones**.`);
+        await msg.edit({ embeds: [resetEmbed], components: [] });
+        collector.stop();
+        return;
+      }
+
+      // ❌ Cancelar Hard Reset
+      else if (i.customId === 'cancel_hardreset') {
+        await msg.edit({
+          embeds: [generatePageEmbed(currentPageIndex)],
+          components: [createMainButtons(currentPageIndex), createActionButtons()]
+        });
+        return;
+      }
+
+      // 🚮 Eliminar una configuración específica
+      else if (i.customId === 'delete_single') {
+        if (configs.length === 0) {
+          await i.followUp({
+            content: `${emoji.info} No hay configuraciones para eliminar.`,
+            ephemeral: true
+          });
+          return;
+        }
+
+        await msg.edit({
+          embeds: [new MessageEmbed()
+            .setColor('#FF5555')
+            .setTitle(`${emoji.remove} Eliminar configuración`)
+            .setDescription(
+              `Ingresa el **número de lista** de la configuración que deseas eliminar.\n\n` +
+              `Ejemplo: \`1\` para eliminar la primera.\n\n` +
+              `Hay ${configs.length} configuraciones en total.`
+            )
+          ],
+          components: []
+        });
+
+        const response = await awaitResponse(message);
+        if (!response) return;
+
+        const num = parseInt(response.content);
+        if (isNaN(num) || num < 1 || num > configs.length) {
+          await message.channel.send({
+            content: `${emoji.delete} Número inválido. Debe estar entre 1 y ${configs.length}.`
+          });
+          return;
+        }
+
+        const target = configs[num - 1];
+        configs.splice(num - 1, 1);
+        await theDB.set(guild.id, configs, 'configs');
+
+        const deletedEmbed = new MessageEmbed()
+          .setColor('#FF5555')
+          .setTitle(`${emoji.delete} Configuración eliminada`)
+          .setDescription(
+            `Se eliminó la configuración #${num}:\n` +
+            `Canal: <#${target.channel_id}>\n` +
+            `Nombre: \`${target.template_name}\``
+          );
+
+        await msg.edit({ embeds: [deletedEmbed] });
+        collector.stop();
+        return;
+      }
+
+      // ❌ Cancelar menú
+      else if (i.customId === 'cancel') {
+        embed
+          .setTitle(`${emoji.cancel} Configuración cancelada`)
+          .setDescription(`${emoji.info} Has salido del menú.`)
+          .setColor('#777777')
+          .setFooter({ text: '' });
+        await msg.edit({ embeds: [embed], components: [] });
+        collector.stop();
+        return;
+      }
+    });
+
+    collector.on('end', async collected => {
+      if (collected.size === 0) {
+        embed
+          .setColor('#777777')
+          .setTitle(`${emoji.info} Tiempo agotado`)
+          .setDescription(`${emoji.cancel} No se recibió interacción.`)
+          .setFooter({ text: '' });
+        await msg.edit({ embeds: [embed], components: [] }).catch(() => {});
+      }
+    });
+
+    // 🔍 Función auxiliar: esperar mensaje del usuario
+    function awaitResponse(msg) {
+      return new Promise((resolve) => {
+        const filter = m => m.author.id === member.id;
+        const collector = msg.channel.createMessageCollector({ filter, max: 1, time: 60000 });
+        collector.on('collect', m => resolve(m));
+        collector.on('end', collected => {
+          if (collected.size === 0) resolve(null);
+        });
+      });
     }
   }
-}
-/**
-  * @INFO
-  * Bot Coded by Tomato#6966 | https://github?.com/Tomato6966/Discord-Js-Handler-Template
-  * @INFO
-  * Work for Milrato Development | https://milrato.eu
-  * @INFO
-  * Please mention him / Milrato Development, when using this Code!
-  * @INFO
-*/
-
-function getNumberEmojis() {
-  return [
-    "<:Number_0:843943149915078696>",
-    "<:Number_1:843943149902626846>",
-    "<:Number_2:843943149868023808>",
-    "<:Number_3:843943149914554388>",
-    "<:Number_4:843943149919535154>",
-    "<:Number_5:843943149759889439>",
-    "<:Number_6:843943150468857876>",
-    "<:Number_7:843943150179713024>",
-    "<:Number_8:843943150360068137>",
-    "<:Number_9:843943150443036672>",
-    "<:Number_10:843943150594031626>",
-    "<:Number_11:893173642022748230>",
-    "<:Number_12:893173642165383218>",
-    "<:Number_13:893173642274410496>",
-    "<:Number_14:893173642198921296>",
-    "<:Number_15:893173642182139914>",
-    "<:Number_16:893173642530271342>",
-    "<:Number_17:893173642538647612>",
-    "<:Number_18:893173642307977258>",
-    "<:Number_19:893173642588991488>",
-    "<:Number_20:893173642307977266>",
-    "<:Number_21:893173642274430977>",
-    "<:Number_22:893173642702250045>",
-    "<:Number_23:893173642454773782>",
-    "<:Number_24:893173642744201226>",
-    "<:Number_25:893173642727424020>"
-  ]
-}
+};

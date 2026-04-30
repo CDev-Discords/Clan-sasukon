@@ -16,6 +16,6 @@ Los emojis van a ser cambiados a genéricos con tal de apoyarte al hostear este 
 
 No olvides que puedes crear un pull request para hecharme una mano con este proyecto ✅
 
-__**Rama completamente experimental, esto se está probando para ver si logramos corregir la música actualizando módulos pero no garantizamos su estabilidad, clona esta rama si quieres ayudar, si solo prefieres estabilidad utiliza la rama dev**__ 😁
+__**Rama desmantenida y totalmente desestimada**__ ❌
 
 Créditos: *Para mi, tomato, dewstouh*
